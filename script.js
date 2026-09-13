@@ -666,6 +666,7 @@
       modalSource.src = src;
     }
     modalPlayer.src = src;
+    modalPlayer.loop = true;
     modalPlayer.load();
 
     // Pause musik latar sementara jika sedang menyala
@@ -717,6 +718,14 @@
   };
 
   if (photoVideoBtns.length > 0 && videoModal) {
+    if (modalPlayer) {
+      modalPlayer.loop = true;
+      modalPlayer.addEventListener('ended', () => {
+        modalPlayer.currentTime = 0;
+        modalPlayer.play().catch(() => {});
+      });
+    }
+
     photoVideoBtns.forEach((btn) => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
