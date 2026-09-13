@@ -284,7 +284,7 @@
       tooltip: '-70 mV (Istirahat)',
       markerClass: 'pos-step-0',
       summary: 'Bagian dalam neuron bermuatan negatif (-70 mV), dijaga aktif oleh pompa Na⁺/K⁺ yang memompa 3 Na⁺ keluar dan 2 K⁺ ke dalam sel dengan energi ATP.',
-      text: 'Pada keadaan istirahat (<em>resting state</em>), bagian dalam neuron cenderung bermuatan negatif dibandingkan bagian luar sel. Kondisi ini disebut sebagai <strong>potensial istirahat (resting membrane potential)</strong>, yang umumnya berkisar sekitar <strong>-70 mV</strong>. Keadaan ini dipertahankan oleh kerja <strong>pompa natrium-kalium (Na⁺/K⁺ pump)</strong> yang secara aktif memompa ion natrium keluar sel dan ion kalium masuk ke dalam sel dengan menggunakan energi <strong>ATP</strong>.',
+      text: 'Pada keadaan istirahat (<em>resting state</em>), bagian dalam neuron cenderung bermuatan negatif dibandingkan bagian luar sel. Kondisi ini disebut sebagai potensial istirahat (resting membrane potential), yang umumnya berkisar sekitar -70 mV. Keadaan ini dipertahankan oleh kerja pompa natrium-kalium (Na⁺/K⁺ pump) yang secara aktif memompa ion natrium keluar sel dan ion kalium masuk ke dalam sel dengan menggunakan energi ATP.',
       naChannel: 'Tertutup',
       kChannel: 'Tertutup',
       pumpStatus: 'Aktif (ATP)',
