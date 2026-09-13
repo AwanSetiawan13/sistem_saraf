@@ -1332,18 +1332,86 @@ summary:focus-visible {
 }
 
 .image-label {
+  display: none !important;
+}
+
+/* ========================================================
+   VIDEO PLAYER CONTROLS & CLEAN OVERLAY ENHANCEMENT
+   ======================================================== */
+video {
+  outline: none;
+  background-color: transparent !important;
+}
+
+/* Remove default heavy black shadow gradient in WebKit/Chrome controls */
+video::-webkit-media-controls-panel {
+  background-image: none !important;
+  background-color: rgba(16, 43, 25, 0.78) !important;
+  border-radius: 0 0 16px 16px;
+}
+
+video::-webkit-media-controls-enclosure {
+  background: none !important;
+}
+
+/* Video Wrapper relative positioning */
+.media-frame,
+.diagram-frame,
+.synapse-image,
+.tab-visual,
+.reflex-image,
+.autonomic-image,
+.disorder-image {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Custom Play Overlay Button when video is paused/stopped */
+.video-play-btn {
   position: absolute;
-  z-index: 2;
-  left: 24px;
-  top: 24px;
-  padding: 7px 10px;
-  border-radius: 999px;
-  background: rgba(16, 43, 25, .88);
-  color: var(--yellow-400);
-  font-size: .72rem;
-  font-weight: 850;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 216, 77, 0.95);
+  background: rgba(16, 43, 25, 0.88);
+  color: var(--yellow-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 0;
+}
+
+.video-play-btn svg {
+  width: 28px;
+  height: 28px;
+  margin-left: 3px;
+  fill: currentColor;
+}
+
+.video-play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.12);
+  background: rgba(23, 64, 37, 0.96);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+.video-play-btn:active {
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+/* When video is playing, hide the custom play button */
+.video-play-btn.hidden {
+  opacity: 0;
   pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.7);
 }
 
 .pill {
@@ -1823,12 +1891,7 @@ summary:focus-visible {
   display: block;
 }
 
-.diagram-frame .image-label {
-  position: absolute;
-  left: 18px;
-  top: 18px;
-  z-index: 3;
-}
+
 
 /* Interactive Curve Marker on Graph */
 .curve-marker {
@@ -2553,10 +2616,7 @@ summary:focus-visible {
   background: #f2ecd4;
 }
 
-.tab-visual .image-label {
-  left: 18px;
-  top: 18px;
-}
+
 
 .tab-visual.dual {
   grid-template-columns: 1fr;
@@ -3782,10 +3842,7 @@ summary:focus-visible {
     border-radius: 20px;
   }
 
-  .image-label {
-    left: 24px;
-    bottom: 24px;
-  }
+
 
   .subheading {
     display: block;

@@ -568,5 +568,75 @@
     window.addEventListener('touchstart', startAudioOnFirstInteraction, { once: true });
     window.addEventListener('scroll', startAudioOnFirstInteraction, { once: true });
   }
+
+  // ========================================================
+  // Dynamic Video Play/Pause & Auto-hide Black Controls
+  // ========================================================
+  const allVideos = qsa('video');
+  allVideos.forEach((video) => {
+    // Ensure controls are removed initially so native black overlay is hidden
+    video.removeAttribute('controls');
+
+    const container = video.parentElement;
+    if (!container) return;
+
+    // Create center Play button overlay if not present
+    let playBtn = qs('.video-play-btn', container);
+    if (!playBtn) {
+      playBtn = document.createElement('button');
+      playBtn.className = 'video-play-btn';
+      playBtn.type = 'button';
+      playBtn.setAttribute('aria-label', 'Putar Video');
+      playBtn.innerHTML = `
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      `;
+      container.appendChild(playBtn);
+    }
+
+    const startPlaying = () => {
+      video.setAttribute('controls', '');
+      video.play().then(() => {
+        playBtn.classList.add('hidden');
+      }).catch(() => { });
+    };
+
+    const stopPlaying = () => {
+      // Automatically hide native black controls when paused/stopped
+      video.removeAttribute('controls');
+      playBtn.classList.remove('hidden');
+    };
+
+    // Play button click
+    playBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      startPlaying();
+    });
+
+    // Clicking the video surface when paused starts playback
+    video.addEventListener('click', (e) => {
+      if (video.paused) {
+        startPlaying();
+      }
+    });
+
+    // When video starts playing, show controls and hide play button
+    video.addEventListener('play', () => {
+      video.setAttribute('controls', '');
+      playBtn.classList.add('hidden');
+    });
+
+    // When video is paused or stopped, automatically hide the black controls overlay
+    video.addEventListener('pause', () => {
+      if (!video.seeking) {
+        stopPlaying();
+      }
+    });
+
+    video.addEventListener('ended', () => {
+      stopPlaying();
+    });
+  });
 })();
 
