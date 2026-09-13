@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#234b2d" />
   <meta name="description" content="Landing page pembelajaran interaktif Sistem Saraf - materi Kelompok 5." />
   <title>Sistem Saraf | Pembelajaran Interaktif</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=3.1" />
 </head>
 
 <body>
@@ -62,6 +62,7 @@
       </div>
     </nav>
   </header>
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
 
   <main id="main-content">
     <section class="hero" id="beranda">
@@ -407,7 +408,7 @@
 
         <div class="media-panel reveal">
           <div class="media-frame">
-            <video class="media-video-loop" autoplay loop muted playsinline preload="auto">
+            <video class="media-video-loop" controls loop muted playsinline preload="metadata">
               <source src="assets/Video01.mp4" type="video/mp4" />
             </video>
             <span class="image-label">Animasi neuron</span>
@@ -593,7 +594,7 @@
                   <span class="active-voltage-badge" id="diagram-voltage-label">-70 mV</span>
                 </div>
                 <div class="diagram-frame">
-                  <video id="diagram-video" class="diagram-video-loop" autoplay loop muted playsinline preload="auto">
+                  <video id="diagram-video" class="diagram-video-loop" controls loop muted playsinline preload="metadata">
                     <source src="assets/Video02.mp4" type="video/mp4" />
                   </video>
                   <span class="image-label" id="diagram-media-label">Animasi impuls saraf</span>
@@ -705,7 +706,7 @@
 
         <div class="synapse-layout">
           <div class="synapse-image reveal">
-            <video class="synapse-video-loop" autoplay loop muted playsinline preload="auto">
+            <video class="synapse-video-loop" controls loop muted playsinline preload="metadata">
               <source src="assets/Video03.mp4" type="video/mp4" />
             </video>
             <div class="synapse-caption"><span>Presinaptik</span><i aria-hidden="true">→</i><span>Celah
@@ -783,7 +784,7 @@
                     memori & pemahaman bahasa.</span></div>
               </div>
               <div class="tab-visual">
-                <video class="media-video-loop" autoplay loop muted playsinline preload="auto">
+                <video class="media-video-loop" controls loop muted playsinline preload="metadata">
                   <source src="assets/Video04.mp4" type="video/mp4" />
                 </video>
                 <span class="image-label">Animasi Serebrum</span>
@@ -801,7 +802,7 @@
                     Menjaga keseimbangan & gerakan bola mata.</span></div>
               </div>
               <div class="tab-visual">
-                <video class="media-video-loop" autoplay loop muted playsinline preload="auto">
+                <video class="media-video-loop" controls loop muted playsinline preload="metadata">
                   <source src="assets/Video05.mp4" type="video/mp4" />
                 </video>
                 <span class="image-label">Animasi Serebelum</span>
@@ -821,7 +822,7 @@
                     tekanan darah, pernapasan, batuk, bersin, dan menelan.</span></div>
               </div>
               <div class="tab-visual">
-                <video class="media-video-loop" autoplay loop muted playsinline preload="auto">
+                <video class="media-video-loop" controls loop muted playsinline preload="metadata">
                   <source src="assets/Video06.mp4" type="video/mp4" />
                 </video>
                 <span class="image-label">Animasi Batang Otak</span>
@@ -856,7 +857,7 @@
                 </div>
               </div>
               <div class="tab-visual">
-                <video class="media-video-loop" autoplay loop muted playsinline preload="auto">
+                <video class="media-video-loop" controls loop muted playsinline preload="metadata">
                   <source src="assets/Video07.mp4" type="video/mp4" />
                 </video>
                 <span class="image-label">Penampang Melintang</span>
@@ -914,7 +915,7 @@
               </ol>
             </div>
             <div class="reflex-image">
-              <video class="reflex-video-loop" autoplay loop muted playsinline preload="auto">
+              <video class="reflex-video-loop" controls loop muted playsinline preload="metadata">
                 <source src="assets/Video08.mp4" type="video/mp4" />
               </video>
             </div>
@@ -933,7 +934,7 @@
               </ol>
             </div>
             <div class="reflex-image">
-              <video class="reflex-video-loop" autoplay loop muted playsinline preload="auto">
+              <video class="reflex-video-loop" controls loop muted playsinline preload="metadata">
                 <source src="assets/Video09.mp4" type="video/mp4" />
               </video>
             </div>
@@ -942,7 +943,7 @@
 
         <div class="autonomic-panel reveal">
           <div class="autonomic-image">
-            <video class="autonomic-video-loop" autoplay loop muted playsinline preload="auto">
+            <video class="autonomic-video-loop" controls loop muted playsinline preload="metadata">
               <source src="assets/Video10.mp4" type="video/mp4" />
             </video>
           </div>
@@ -979,7 +980,7 @@
         <div class="disorder-grid">
           <article class="disorder-card reveal" tabindex="0">
             <div class="disorder-image">
-              <video class="disorder-video-loop" autoplay loop muted playsinline preload="auto">
+              <video class="disorder-video-loop" controls loop muted playsinline preload="metadata">
                 <source src="assets/Video11.mp4" type="video/mp4" />
               </video>
               <span>01</span>
@@ -994,7 +995,7 @@
           </article>
           <article class="disorder-card reveal" tabindex="0">
             <div class="disorder-image">
-              <video class="disorder-video-loop" autoplay loop muted playsinline preload="auto">
+              <video class="disorder-video-loop" controls loop muted playsinline preload="metadata">
                 <source src="assets/Video12.mp4" type="video/mp4" />
               </video>
               <span>02</span>
@@ -1009,7 +1010,7 @@
           </article>
           <article class="disorder-card reveal" tabindex="0">
             <div class="disorder-image">
-              <video class="disorder-video-loop" autoplay loop muted playsinline preload="auto">
+              <video class="disorder-video-loop" controls loop muted playsinline preload="metadata">
                 <source src="assets/Video13.mp4" type="video/mp4" />
               </video>
               <span>03</span>
@@ -1024,7 +1025,7 @@
           </article>
           <article class="disorder-card reveal" tabindex="0">
             <div class="disorder-image">
-              <video class="disorder-video-loop" autoplay loop muted playsinline preload="auto">
+              <video class="disorder-video-loop" controls loop muted playsinline preload="metadata">
                 <source src="assets/Video14.mp4" type="video/mp4" />
               </video>
               <span>04</span>

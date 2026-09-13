@@ -7,24 +7,50 @@
   // Mobile navigation
   const navToggle = qs('#nav-toggle');
   const navMenu = qs('#nav-menu');
+  const navOverlay = qs('#nav-overlay');
 
   const closeMenu = () => {
     if (!navToggle || !navMenu) return;
     navToggle.setAttribute('aria-expanded', 'false');
     navMenu.classList.remove('open');
+    if (navOverlay) navOverlay.classList.remove('active');
     document.body.classList.remove('menu-open');
   };
 
+  const openMenu = () => {
+    if (!navToggle || !navMenu) return;
+    navToggle.setAttribute('aria-expanded', 'true');
+    navMenu.classList.add('open');
+    if (navOverlay) navOverlay.classList.add('active');
+    document.body.classList.add('menu-open');
+  };
+
   if (navToggle && navMenu) {
-    navToggle.addEventListener('click', () => {
+    // Ensure menu is closed initially on page load
+    closeMenu();
+
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!isOpen));
-      navMenu.classList.toggle('open', !isOpen);
-      document.body.classList.toggle('menu-open', !isOpen);
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
     });
+
+    if (navOverlay) {
+      navOverlay.addEventListener('click', closeMenu);
+    }
 
     qsa('a[href^="#"]', navMenu).forEach((link) => {
       link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+        closeMenu();
+      }
     });
 
     window.addEventListener('resize', () => {
@@ -391,10 +417,7 @@
     if (diagramPhaseLabel) diagramPhaseLabel.textContent = `${stage.numText.split(' / ')[0]} · ${stage.title}`;
     if (diagramVoltageLabel) diagramVoltageLabel.textContent = stage.voltage;
 
-    // Video02 continues seamlessly playing across all stages 01-05
-    if (diagramVideo && diagramVideo.paused) {
-      diagramVideo.play().catch(() => { });
-    }
+    // Video02 playback is controlled manually by the user via native controls
 
     // 4 Metrics (Row 1: Voltase & Na+, Row 2: K+ & Pompa)
     if (metricVoltage) metricVoltage.textContent = stage.voltage;
