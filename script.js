@@ -96,7 +96,7 @@
     },
     {
       title: 'Ion Ca²⁺ masuk',
-      text: 'Ion Ca²⁺ masuk dan memicu vesikel untuk bergerak serta berfusi dengan membran presinaptik.'
+      text: 'Ion (Ca²⁺) masuk yang memicu untuk bergerak dan berfusi dengan membran presinaptik Ion Ca²⁺ masuk dan memicu vesikel untuk bergerak serta berfusi dengan membran presinaptik.'
     },
     {
       title: 'Neurotransmitter dilepaskan',
@@ -239,6 +239,13 @@
         if (quizFeedback) quizFeedback.textContent = '';
       }, 0);
     });
+
+    // Reset feedback state on option change
+    quizQuestions.forEach((question) => {
+      question.addEventListener('change', () => {
+        question.classList.remove('correct', 'wrong');
+      });
+    });
   }
 
   // Interactive Action Potential (Impuls Listrik) Stage Explorer
@@ -270,7 +277,7 @@
       tooltip: '+30 mV (Puncak)',
       markerClass: 'pos-step-1',
       summary: 'Kanal Na⁺ terbuka akibat rangsangan mencapai ambang batas, ion Na⁺ membanjiri masuk ke dalam sel hingga muatan dalam berubah drastis menjadi positif (+30 mV).',
-      text: 'Pada tahap ini, kanal natrium terbuka sehingga <strong>ion Na⁺ masuk</strong> ke dalam sel dan menyebabkan bagian dalam sel menjadi lebih positif. Perubahan potensial ini memicu terbentuknya <strong>impuls listrik atau potensial aksi</strong> yang akan merambat sepanjang akson.',
+      text: 'Pada tahap ini, kanal natrium terbuka sehingga ion Na⁺ masuk ke dalam sel dan menyebabkan bagian dalam sel menjadi lebih positif. Perubahan potensial ini memicu terbentuknya impuls listrik atau potensial aksi yang akan merambat sepanjang akson.',
       naChannel: 'Terbuka (Inflow)',
       kChannel: 'Tertutup',
       pumpStatus: 'Nonaktif Sementara',
@@ -289,7 +296,7 @@
       tooltip: 'K⁺ Keluar (Turun)',
       markerClass: 'pos-step-2',
       summary: 'Kanal Na⁺ menutup rapat dan kanal K⁺ terbuka lebar. Ion K⁺ keluar dari sel, mengembalikan muatan bagian dalam menjadi negatif.',
-      text: 'Setelah depolarisasi mencapai puncaknya, kanal natrium akan menutup dan <strong>kanal kalium (K⁺) terbuka</strong>. Ion kalium keluar dari sel, sehingga muatan di dalam sel kembali menjadi negatif menuju batas istirahat.',
+      text: 'Setelah depolarisasi mencapai puncaknya, kanal natrium akan menutup dan kanal kalium (K⁺) terbuka. Ion kalium keluar dari sel, sehingga muatan di dalam sel kembali menjadi negatif menuju batas istirahat.',
       naChannel: 'Tertutup (Inaktif)',
       kChannel: 'Terbuka (Outflow)',
       pumpStatus: 'Mulai Bekerja',
@@ -327,7 +334,7 @@
       tooltip: 'Nodus Ranvier',
       markerClass: 'pos-step-4',
       summary: 'Impuls listrik melompat antar Nodus Ranvier pada akson bermielin, melipatgandakan kecepatan hantar sinyal secara hemat energi.',
-      text: 'Pada akson bermielin, impuls listrik “melompat” dari satu <strong>Nodus Ranvier</strong> ke Nodus Ranvier berikutnya sehingga kecepatan transmisi berlangsung jauh lebih cepat dan efisien dibandingkan serabut saraf tak bermielin.',
+      text: 'Pada akson bermielin, impuls listrik “melompat” dari satu Nodus Ranvier ke Nodus Ranvier berikutnya sehingga kecepatan transmisi berlangsung jauh lebih cepat dan efisien dibandingkan serabut saraf tak bermielin.',
       naChannel: 'Terkonsentrasi di Nodus',
       kChannel: 'Terkonsentrasi di Nodus',
       pumpStatus: 'Hemat Energi',
@@ -386,7 +393,7 @@
 
     // Video02 continues seamlessly playing across all stages 01-05
     if (diagramVideo && diagramVideo.paused) {
-      diagramVideo.play().catch(() => {});
+      diagramVideo.play().catch(() => { });
     }
 
     // 4 Metrics (Row 1: Voltase & Na+, Row 2: K+ & Pompa)
@@ -447,11 +454,23 @@
   // Google Maps Explorer canvas initialized cleanly
   const mapCanvas = qs('.gmaps-canvas');
 
-  // Make smooth anchor scrolling respect keyboard and sticky header.
+  // Make smooth anchor scrolling respect keyboard, top links, and sticky header
   qsa('a[href^="#"]').forEach((link) => {
     link.addEventListener('click', (event) => {
       const targetId = link.getAttribute('href');
       if (!targetId || targetId === '#') return;
+
+      // Special handling for top/back-to-top links
+      if (targetId === '#top' || targetId === '#beranda' || link.classList.contains('back-top') || link.id === 'back-to-top-link') {
+        event.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: prefersReducedMotion ? 'auto' : 'smooth'
+        });
+        if (history.pushState) history.pushState(null, '', window.location.pathname);
+        return;
+      }
+
       const target = qs(targetId);
       if (!target) return;
       event.preventDefault();
@@ -459,4 +478,72 @@
       if (history.pushState) history.pushState(null, '', targetId);
     });
   });
+
+  // Background Audio Controller with Floating Toggle Widget
+  const bgAudio = qs('#bg-audio');
+  const musicToggleBtn = qs('#music-toggle-btn');
+  const musicStatusText = qs('#music-status-text');
+
+  if (bgAudio && musicToggleBtn) {
+    bgAudio.volume = 0.4;
+
+    const updateAudioUI = (isPlaying) => {
+      musicToggleBtn.classList.toggle('is-playing', isPlaying);
+      musicToggleBtn.classList.toggle('is-paused', !isPlaying);
+      musicToggleBtn.setAttribute('aria-label', isPlaying ? 'Matikan musik latar' : 'Nyalakan musik latar');
+      musicToggleBtn.title = isPlaying ? 'Matikan Musik Latar' : 'Nyalakan Musik Latar';
+      if (musicStatusText) {
+        musicStatusText.textContent = isPlaying ? 'Aktif' : 'Mati';
+      }
+    };
+
+    const playAudio = () => {
+      const playPromise = bgAudio.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            updateAudioUI(true);
+          })
+          .catch(() => {
+            // Autoplay blocked by browser policy until user interacts
+            updateAudioUI(false);
+          });
+      }
+    };
+
+    const pauseAudio = () => {
+      bgAudio.pause();
+      updateAudioUI(false);
+    };
+
+    // Toggle button click
+    musicToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (bgAudio.paused) {
+        playAudio();
+      } else {
+        pauseAudio();
+      }
+    });
+
+    // Try autoplay immediately
+    playAudio();
+
+    // Fallback: start music on first user gesture if autoplay was blocked
+    const startAudioOnFirstInteraction = () => {
+      if (bgAudio.paused) {
+        playAudio();
+      }
+      window.removeEventListener('click', startAudioOnFirstInteraction);
+      window.removeEventListener('keydown', startAudioOnFirstInteraction);
+      window.removeEventListener('touchstart', startAudioOnFirstInteraction);
+      window.removeEventListener('scroll', startAudioOnFirstInteraction);
+    };
+
+    window.addEventListener('click', startAudioOnFirstInteraction, { once: true });
+    window.addEventListener('keydown', startAudioOnFirstInteraction, { once: true });
+    window.addEventListener('touchstart', startAudioOnFirstInteraction, { once: true });
+    window.addEventListener('scroll', startAudioOnFirstInteraction, { once: true });
+  }
 })();
+

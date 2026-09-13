@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="id">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,6 +9,7 @@
   <title>Sistem Saraf | Pembelajaran Interaktif</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <a class="skip-link" href="#main-content">Lewati ke materi</a>
 
@@ -19,10 +21,23 @@
     <nav class="nav container" aria-label="Navigasi utama">
       <a class="brand" href="#beranda" aria-label="Sistem Saraf - Beranda">
         <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 48 48" role="img">
-            <circle cx="15" cy="17" r="6"></circle>
-            <path d="M20 18c7 0 9-7 15-7m-14 9c9 2 11 8 18 8M17 23c1 7-2 11-6 15m4-15c-5 4-9 4-12 4"></path>
-            <path d="M35 11l7-4m-3 21l6 3M11 38l-2 7M3 27l-2 5"></path>
+          <svg viewBox="0 0 48 48" role="img" aria-label="Logo Neuron Sistem Saraf">
+            <!-- Inti Sel Neuron (Soma) -->
+            <circle cx="24" cy="24" r="5"></circle>
+            <!-- Cabang Dendrit & Akson -->
+            <path d="M24 19V9m0 0l-4-3m4 3l4-3M24 29v10m0 0l-4 3m4-3l4 3"></path>
+            <path d="M19 24H9m0 0l-3-4m3 4l-3 4M29 24h10m0 0l3-4m-3 4l3 4"></path>
+            <path d="M20.5 20.5l-7-7m0 0l-4 1m4-1l1-4M27.5 20.5l7-7m0 0l4 1m-4-1l-1-4"></path>
+            <path d="M20.5 27.5l-7 7m0 0l-4-1m4 1l1 4M27.5 27.5l7 7m0 0l4-1m-4 1l-1 4"></path>
+            <!-- Titik Sinapsis -->
+            <circle cx="24" cy="6" r="2"></circle>
+            <circle cx="24" cy="42" r="2"></circle>
+            <circle cx="6" cy="24" r="2"></circle>
+            <circle cx="42" cy="24" r="2"></circle>
+            <circle cx="11" cy="11" r="1.8"></circle>
+            <circle cx="37" cy="11" r="1.8"></circle>
+            <circle cx="11" cy="37" r="1.8"></circle>
+            <circle cx="37" cy="37" r="1.8"></circle>
           </svg>
         </span>
         <span>
@@ -31,7 +46,8 @@
         </span>
       </a>
 
-      <button class="nav-toggle" id="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" aria-label="Buka navigasi">
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false"
+        aria-label="Buka navigasi">
         <span></span><span></span><span></span>
       </button>
 
@@ -54,9 +70,9 @@
       <div class="container hero-grid">
         <div class="hero-copy reveal">
           <span class="eyebrow light"><span class="pulse-dot"></span> Anatomi & Fisiologi</span>
-          <h1>Kenali cara <span>sistem saraf</span> menerima, memproses, dan merespons informasi.</h1>
+          <h1><span>sistem saraf</span></h1>
           <p class="hero-lead">
-            Materi pembelajaran interaktif tentang neuron, potensial aksi, sinapsis, otak, sumsum tulang belakang, refleks, sistem saraf otonom, dan gangguan sistem saraf.
+            Mengenali anatomi dan fisiologi sistem saraf manusia
           </p>
           <div class="hero-actions">
             <a class="btn btn-yellow" href="#neuron">Mulai Belajar <span aria-hidden="true">→</span></a>
@@ -76,32 +92,53 @@
               <span class="mini-badge">Sinyal aktif</span>
               <span class="signal-value">-70 mV</span>
             </div>
-            <svg class="neuron-art" viewBox="0 0 620 470" role="img" aria-label="Ilustrasi abstrak neuron dan jalur impuls">
+            <svg class="neuron-art" viewBox="0 0 620 470" role="img"
+              aria-label="Ilustrasi abstrak neuron dan jalur impuls">
               <defs>
-                <filter id="glow"><feGaussianBlur stdDeviation="7" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-                <linearGradient id="axonGradient" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffe363"/><stop offset="1" stop-color="#ffc928"/></linearGradient>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="7" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+                <linearGradient id="axonGradient" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#ffe363" />
+                  <stop offset="1" stop-color="#ffc928" />
+                </linearGradient>
               </defs>
               <g class="dendrites" fill="none" stroke="#9cc56a" stroke-width="10" stroke-linecap="round">
-                <path d="M194 204C144 174 125 123 99 83M166 225C115 225 87 197 46 184M172 247C128 277 101 300 55 307M201 180C176 125 182 98 169 51M218 180C236 127 263 109 279 72M174 210C126 190 103 158 86 130"/>
+                <path
+                  d="M194 204C144 174 125 123 99 83M166 225C115 225 87 197 46 184M172 247C128 277 101 300 55 307M201 180C176 125 182 98 169 51M218 180C236 127 263 109 279 72M174 210C126 190 103 158 86 130" />
               </g>
               <g class="dendrite-tips" fill="#ffe363">
-                <circle cx="98" cy="82" r="10"/><circle cx="45" cy="184" r="10"/><circle cx="54" cy="307" r="10"/><circle cx="169" cy="50" r="10"/><circle cx="279" cy="72" r="10"/><circle cx="86" cy="129" r="8"/>
+                <circle cx="98" cy="82" r="10" />
+                <circle cx="45" cy="184" r="10" />
+                <circle cx="54" cy="307" r="10" />
+                <circle cx="169" cy="50" r="10" />
+                <circle cx="279" cy="72" r="10" />
+                <circle cx="86" cy="129" r="8" />
               </g>
-              <circle cx="210" cy="220" r="62" fill="#f7f3d4" stroke="#ffe363" stroke-width="12"/>
-              <circle cx="213" cy="220" r="23" fill="#d06143"/>
-              <path class="axon-line" d="M268 222C330 220 338 240 382 236C427 232 441 197 491 203C527 207 545 237 574 240" fill="none" stroke="url(#axonGradient)" stroke-width="16" stroke-linecap="round"/>
+              <circle cx="210" cy="220" r="62" fill="#f7f3d4" stroke="#ffe363" stroke-width="12" />
+              <circle cx="213" cy="220" r="23" fill="#d06143" />
+              <path class="axon-line"
+                d="M268 222C330 220 338 240 382 236C427 232 441 197 491 203C527 207 545 237 574 240" fill="none"
+                stroke="url(#axonGradient)" stroke-width="16" stroke-linecap="round" />
               <g class="myelin" fill="#f8f5db" stroke="#8fad62" stroke-width="6">
-                <rect x="310" y="205" width="38" height="52" rx="17" transform="rotate(4 329 231)"/>
-                <rect x="357" y="210" width="38" height="52" rx="17" transform="rotate(-4 376 236)"/>
-                <rect x="405" y="198" width="38" height="52" rx="17" transform="rotate(-10 424 224)"/>
-                <rect x="453" y="191" width="38" height="52" rx="17" transform="rotate(7 472 217)"/>
-                <rect x="500" y="203" width="38" height="52" rx="17" transform="rotate(15 519 229)"/>
+                <rect x="310" y="205" width="38" height="52" rx="17" transform="rotate(4 329 231)" />
+                <rect x="357" y="210" width="38" height="52" rx="17" transform="rotate(-4 376 236)" />
+                <rect x="405" y="198" width="38" height="52" rx="17" transform="rotate(-10 424 224)" />
+                <rect x="453" y="191" width="38" height="52" rx="17" transform="rotate(7 472 217)" />
+                <rect x="500" y="203" width="38" height="52" rx="17" transform="rotate(15 519 229)" />
               </g>
               <g class="axon-terminal" fill="none" stroke="#9cc56a" stroke-width="9" stroke-linecap="round">
-                <path d="M570 240c20-21 27-39 26-59M572 240c21 6 30 20 38 37M567 242c10 23 5 42 1 61"/>
+                <path d="M570 240c20-21 27-39 26-59M572 240c21 6 30 20 38 37M567 242c10 23 5 42 1 61" />
               </g>
               <g class="signal-particles" fill="#ffe363" filter="url(#glow)">
-                <circle cx="286" cy="220" r="7"/><circle cx="378" cy="233" r="7"/><circle cx="468" cy="212" r="7"/><circle cx="552" cy="236" r="7"/>
+                <circle cx="286" cy="220" r="7" />
+                <circle cx="378" cy="233" r="7" />
+                <circle cx="468" cy="212" r="7" />
+                <circle cx="552" cy="236" r="7" />
               </g>
             </svg>
             <div class="hero-card-footer">
@@ -116,7 +153,9 @@
       </div>
 
       <div class="hero-wave" aria-hidden="true">
-        <svg viewBox="0 0 1440 130" preserveAspectRatio="none"><path d="M0,65 C260,130 430,20 710,70 C960,115 1160,20 1440,70 L1440,130 L0,130 Z"></path></svg>
+        <svg viewBox="0 0 1440 130" preserveAspectRatio="none">
+          <path d="M0,65 C260,130 430,20 710,70 C960,115 1160,20 1440,70 L1440,130 L0,130 Z"></path>
+        </svg>
       </div>
     </section>
 
@@ -133,7 +172,8 @@
           <div class="gmaps-header">
             <div class="gmaps-search-box">
               <span class="gmaps-search-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="11" cy="11" r="8"></circle>
                   <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
@@ -150,7 +190,7 @@
               <svg class="gmaps-svg-grid" viewBox="0 0 1000 500" preserveAspectRatio="none">
                 <defs>
                   <pattern id="mapGrid" width="40" height="40" patternUnits="userSpaceOnUse">
-                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(47, 111, 62, 0.07)" stroke-width="1"/>
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(47, 111, 62, 0.07)" stroke-width="1" />
                   </pattern>
                   <linearGradient id="routeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stop-color="#2a723e" />
@@ -173,28 +213,45 @@
                 <path d="M 720 360 Q 860 325 965 385 Q 925 485 745 455 Z" fill="#d7efc4" opacity="0.95" />
 
                 <!-- Cerebrospinal Waterway (Blue River) -->
-                <path d="M 390 -10 C 410 110, 370 200, 480 300 C 560 380, 520 450, 540 510" fill="none" stroke="#c2e6ff" stroke-width="26" stroke-linecap="round" opacity="0.95" />
-                <path d="M 390 -10 C 410 110, 370 200, 480 300 C 560 380, 520 450, 540 510" fill="none" stroke="#7ec3f8" stroke-width="5" stroke-linecap="round" opacity="0.75" stroke-dasharray="14 10" />
+                <path d="M 390 -10 C 410 110, 370 200, 480 300 C 560 380, 520 450, 540 510" fill="none" stroke="#c2e6ff"
+                  stroke-width="26" stroke-linecap="round" opacity="0.95" />
+                <path d="M 390 -10 C 410 110, 370 200, 480 300 C 560 380, 520 450, 540 510" fill="none" stroke="#7ec3f8"
+                  stroke-width="5" stroke-linecap="round" opacity="0.75" stroke-dasharray="14 10" />
 
                 <!-- Stylized Arteries & Highways (Golden/Orange outlines) -->
-                <path d="M -10 160 C 200 170, 350 135, 600 150 C 780 160, 900 215, 1020 205" fill="none" stroke="#fcd34d" stroke-width="22" stroke-linecap="round" opacity="0.95" />
-                <path d="M -10 160 C 200 170, 350 135, 600 150 C 780 160, 900 215, 1020 205" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round" />
-                
-                <path d="M -10 370 C 240 360, 480 385, 720 365 C 870 355, 950 375, 1020 385" fill="none" stroke="#fcd34d" stroke-width="22" stroke-linecap="round" opacity="0.95" />
-                <path d="M -10 370 C 240 360, 480 385, 720 365 C 870 355, 950 375, 1020 385" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round" />
+                <path d="M -10 160 C 200 170, 350 135, 600 150 C 780 160, 900 215, 1020 205" fill="none"
+                  stroke="#fcd34d" stroke-width="22" stroke-linecap="round" opacity="0.95" />
+                <path d="M -10 160 C 200 170, 350 135, 600 150 C 780 160, 900 215, 1020 205" fill="none"
+                  stroke="#ffffff" stroke-width="14" stroke-linecap="round" />
+
+                <path d="M -10 370 C 240 360, 480 385, 720 365 C 870 355, 950 375, 1020 385" fill="none"
+                  stroke="#fcd34d" stroke-width="22" stroke-linecap="round" opacity="0.95" />
+                <path d="M -10 370 C 240 360, 480 385, 720 365 C 870 355, 950 375, 1020 385" fill="none"
+                  stroke="#ffffff" stroke-width="14" stroke-linecap="round" />
 
                 <!-- Secondary City Crossings (White roads) -->
-                <path d="M 120 -10 C 130 180, 180 320, 240 510" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round" opacity="0.95" />
-                <path d="M 750 -10 C 760 170, 810 340, 870 510" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round" opacity="0.95" />
+                <path d="M 120 -10 C 130 180, 180 320, 240 510" fill="none" stroke="#ffffff" stroke-width="14"
+                  stroke-linecap="round" opacity="0.95" />
+                <path d="M 750 -10 C 760 170, 810 340, 870 510" fill="none" stroke="#ffffff" stroke-width="14"
+                  stroke-linecap="round" opacity="0.95" />
 
                 <!-- Road & Waterway labels -->
-                <text x="290" y="115" fill="#1b4d27" font-size="11" font-weight="800" letter-spacing="1.2">JL. TRANSMISI IMPULS</text>
-                <text x="650" y="345" fill="#1b4d27" font-size="11" font-weight="800" letter-spacing="1.2">ARAH SISTEM PUSAT</text>
-                <text x="480" y="440" fill="#0284c7" font-size="9" font-weight="800" letter-spacing="1">CAIRAN SEREBROSPINAL</text>
+                <text x="290" y="115" fill="#1b4d27" font-size="11" font-weight="800" letter-spacing="1.2">JL. TRANSMISI
+                  IMPULS</text>
+                <text x="650" y="345" fill="#1b4d27" font-size="11" font-weight="800" letter-spacing="1.2">ARAH SISTEM
+                  PUSAT</text>
+                <text x="480" y="440" fill="#0284c7" font-size="9" font-weight="800" letter-spacing="1">CAIRAN
+                  SEREBROSPINAL</text>
 
                 <!-- Connecting GPS Route Line with Vibrant Electric Blue Dash Pulse -->
-                <path class="gmaps-route-line-bg" d="M 140 230 C 220 180, 310 215, 400 200 C 490 185, 590 200, 680 190 C 780 180, 880 240, 880 340 C 780 400, 630 380, 520 380 C 400 380, 280 400, 180 370" fill="none" stroke="rgba(37, 99, 235, 0.28)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" />
-                <path class="gmaps-route-line" d="M 140 230 C 220 180, 310 215, 400 200 C 490 185, 590 200, 680 190 C 780 180, 880 240, 880 340 C 780 400, 630 380, 520 380 C 400 380, 280 400, 180 370" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 8" />
+                <path class="gmaps-route-line-bg"
+                  d="M 140 230 C 220 180, 310 215, 400 200 C 490 185, 590 200, 680 190 C 780 180, 880 240, 880 340 C 780 400, 630 380, 520 380 C 400 380, 280 400, 180 370"
+                  fill="none" stroke="rgba(37, 99, 235, 0.28)" stroke-width="11" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path class="gmaps-route-line"
+                  d="M 140 230 C 220 180, 310 215, 400 200 C 490 185, 590 200, 680 190 C 780 180, 880 240, 880 340 C 780 400, 630 380, 520 380 C 400 380, 280 400, 180 370"
+                  fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-dasharray="10 8" />
               </svg>
 
               <!-- Compass widget -->
@@ -213,9 +270,12 @@
               <a href="#neuron" class="gmaps-pin-item pin-pos-1" data-pin="1" aria-label="Lokasi 01: Sel Saraf">
                 <div class="pin-marker">
                   <svg viewBox="0 0 36 48" class="pin-svg" filter="url(#pinShadow)">
-                    <path class="pin-body pin-body-red" d="M 18 0 C 8.06 0 0 8.06 0 18 C 0 31.5 18 48 18 48 C 18 48 36 31.5 36 18 C 36 8.06 27.94 0 18 0 Z"></path>
+                    <path class="pin-body pin-body-red"
+                      d="M 18 0 C 8.06 0 0 8.06 0 18 C 0 31.5 18 48 18 48 C 18 48 36 31.5 36 18 C 36 8.06 27.94 0 18 0 Z">
+                    </path>
                     <circle class="pin-inner-circle" cx="18" cy="18" r="11" fill="#ffffff"></circle>
-                    <text class="pin-text" x="18" y="22" text-anchor="middle" font-size="11" font-weight="900" fill="#c5221f">01</text>
+                    <text class="pin-text" x="18" y="22" text-anchor="middle" font-size="11" font-weight="900"
+                      fill="#c5221f">01</text>
                   </svg>
                   <span class="pin-pulse"></span>
                 </div>
@@ -231,9 +291,12 @@
               <a href="#impuls" class="gmaps-pin-item pin-pos-2" data-pin="2" aria-label="Lokasi 02: Potensial Aksi">
                 <div class="pin-marker">
                   <svg viewBox="0 0 36 48" class="pin-svg" filter="url(#pinShadow)">
-                    <path class="pin-body pin-body-green" d="M 18 0 C 8.06 0 0 8.06 0 18 C 0 31.5 18 48 18 48 C 18 48 36 31.5 36 18 C 36 8.06 27.94 0 18 0 Z"></path>
+                    <path class="pin-body pin-body-green"
+                      d="M 18 0 C 8.06 0 0 8.06 0 18 C 0 31.5 18 48 18 48 C 18 48 36 31.5 36 18 C 36 8.06 27.94 0 18 0 Z">
+                    </path>
                     <circle class="pin-inner-circle" cx="18" cy="18" r="11" fill="#ffffff"></circle>
-                    <text class="pin-text" x="18" y="22" text-anchor="middle" font-size="11" font-weight="900" fill="#1b5e20">02</text>
+                    <text class="pin-text" x="18" y="22" text-anchor="middle" font-size="11" font-weight="900"
+                      fill="#1b5e20">02</text>
                   </svg>
                   <span class="pin-pulse"></span>
                 </div>
@@ -249,9 +312,12 @@
               <a href="#sinapsis" class="gmaps-pin-item pin-pos-3" data-pin="3" aria-label="Lokasi 03: Sinapsis">
                 <div class="pin-marker">
                   <svg viewBox="0 0 36 48" class="pin-svg" filter="url(#pinShadow)">
-                    <path class="pin-body pin-body-blue" d="M 18 0 C 8.06 0 0 8.06 0 18 C 0 31.5 18 48 18 48 C 18 48 36 31.5 36 18 C 36 8.06 27.94 0 18 0 Z"></path>
+                    <path class="pin-body pin-body-blue"
+                      d="M 18 0 C 8.06 0 0 8.06 0 18 C 0 31.5 18 48 18 48 C 18 48 36 31.5 36 18 C 36 8.06 27.94 0 18 0 Z">
+                    </path>
                     <circle class="pin-inner-circle" cx="18" cy="18" r="11" fill="#ffffff"></circle>
-                    <text class="pin-text" x="18" y="22" text-anchor="middle" font-size="11" font-weight="900" fill="#1565c0">03</text>
+                    <text class="pin-text" x="18" y="22" text-anchor="middle" font-size="11" font-weight="900"
+                      fill="#1565c0">03</text>
                   </svg>
                   <span class="pin-pulse"></span>
                 </div>
@@ -267,9 +333,12 @@
               <a href="#pusat" class="gmaps-pin-item pin-pos-4" data-pin="4" aria-label="Lokasi 04: Sistem Saraf Pusat">
                 <div class="pin-marker">
                   <svg viewBox="0 0 36 48" class="pin-svg" filter="url(#pinShadow)">
-                    <path class="pin-body pin-body-orange" d="M 18 0 C 8.06 0 0 8.06 0 18 C 0 31.5 18 48 18 48 C 18 48 36 31.5 36 18 C 36 8.06 27.94 0 18 0 Z"></path>
+                    <path class="pin-body pin-body-orange"
+                      d="M 18 0 C 8.06 0 0 8.06 0 18 C 0 31.5 18 48 18 48 C 18 48 36 31.5 36 18 C 36 8.06 27.94 0 18 0 Z">
+                    </path>
                     <circle class="pin-inner-circle" cx="18" cy="18" r="11" fill="#ffffff"></circle>
-                    <text class="pin-text" x="18" y="22" text-anchor="middle" font-size="11" font-weight="900" fill="#e65100">04</text>
+                    <text class="pin-text" x="18" y="22" text-anchor="middle" font-size="11" font-weight="900"
+                      fill="#e65100">04</text>
                   </svg>
                   <span class="pin-pulse"></span>
                 </div>
@@ -285,9 +354,12 @@
               <a href="#refleks" class="gmaps-pin-item pin-pos-5" data-pin="5" aria-label="Lokasi 05: Refleks & Otonom">
                 <div class="pin-marker">
                   <svg viewBox="0 0 36 48" class="pin-svg" filter="url(#pinShadow)">
-                    <path class="pin-body pin-body-teal" d="M 18 0 C 8.06 0 0 8.06 0 18 C 0 31.5 18 48 18 48 C 18 48 36 31.5 36 18 C 36 8.06 27.94 0 18 0 Z"></path>
+                    <path class="pin-body pin-body-teal"
+                      d="M 18 0 C 8.06 0 0 8.06 0 18 C 0 31.5 18 48 18 48 C 18 48 36 31.5 36 18 C 36 8.06 27.94 0 18 0 Z">
+                    </path>
                     <circle class="pin-inner-circle" cx="18" cy="18" r="11" fill="#ffffff"></circle>
-                    <text class="pin-text" x="18" y="22" text-anchor="middle" font-size="11" font-weight="900" fill="#00695c">05</text>
+                    <text class="pin-text" x="18" y="22" text-anchor="middle" font-size="11" font-weight="900"
+                      fill="#00695c">05</text>
                   </svg>
                   <span class="pin-pulse"></span>
                 </div>
@@ -303,9 +375,12 @@
               <a href="#gangguan" class="gmaps-pin-item pin-pos-6" data-pin="6" aria-label="Lokasi 06: Kelainan">
                 <div class="pin-marker">
                   <svg viewBox="0 0 36 48" class="pin-svg" filter="url(#pinShadow)">
-                    <path class="pin-body pin-body-purple" d="M 18 0 C 8.06 0 0 8.06 0 18 C 0 31.5 18 48 18 48 C 18 48 36 31.5 36 18 C 36 8.06 27.94 0 18 0 Z"></path>
+                    <path class="pin-body pin-body-purple"
+                      d="M 18 0 C 8.06 0 0 8.06 0 18 C 0 31.5 18 48 18 48 C 18 48 36 31.5 36 18 C 36 8.06 27.94 0 18 0 Z">
+                    </path>
                     <circle class="pin-inner-circle" cx="18" cy="18" r="11" fill="#ffffff"></circle>
-                    <text class="pin-text" x="18" y="22" text-anchor="middle" font-size="11" font-weight="900" fill="#4a148c">06</text>
+                    <text class="pin-text" x="18" y="22" text-anchor="middle" font-size="11" font-weight="900"
+                      fill="#4a148c">06</text>
                   </svg>
                   <span class="pin-pulse"></span>
                 </div>
@@ -341,14 +416,16 @@
             <span class="pill">Unit Fungsional</span>
             <h3>Sel Saraf (Neuron)</h3>
             <p class="media-lead-text">
-              Neuron adalah sel utama dalam sistem saraf yang berfungsi sebagai unit fungsional dasar untuk menerima, memproses, dan menghantarkan informasi dalam bentuk impuls listrik dan sinyal kimia.
+              Neuron adalah sel utama dalam sistem saraf yang berfungsi sebagai unit fungsional dasar untuk menerima,
+              memproses, dan menghantarkan informasi dalam bentuk impuls listrik dan sinyal kimia.
             </p>
             <div class="media-highlights">
               <div class="highlight-pill"><span>⚡</span> Impuls Listrik</div>
               <div class="highlight-pill"><span>🧪</span> Sinyal Kimia</div>
               <div class="highlight-pill"><span>🧠</span> Jaringan Komunikasi</div>
             </div>
-            <a class="text-link" href="https://skfb.ly/oPDwP" target="_blank" rel="noopener noreferrer">Lihat struktur neuron 3D <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="https://skfb.ly/oPDwP" target="_blank" rel="noopener noreferrer">Lihat struktur
+              neuron 3D <span aria-hidden="true">↗</span></a>
           </div>
         </div>
 
@@ -357,13 +434,15 @@
           <div class="anatomy-block-header">
             <span class="pill">Anatomi Sel</span>
             <h3 class="anatomy-heading">Struktur Anatomi Neuron</h3>
-            <p class="anatomy-desc">Empat bagian utama sel saraf yang bekerja terintegrasi dari penerima rangsangan hingga pengirim impuls:</p>
+            <p class="anatomy-desc">Empat bagian utama sel saraf yang bekerja terintegrasi dari penerima rangsangan
+              hingga pengirim impuls:</p>
           </div>
           <div class="anatomy-cards-grid">
             <article class="anatomy-card">
               <div class="anatomy-card-top">
                 <div class="anatomy-icon icon-soma" title="Soma / Badan Sel">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="9"></circle>
                     <circle cx="12" cy="12" r="4" fill="currentColor" opacity="0.3"></circle>
                     <path d="M12 2v3M12 19v3M2 12h3M19 12h3"></path>
@@ -372,13 +451,15 @@
                 <span class="anatomy-role-badge">Pusat Metabolik</span>
               </div>
               <h4>Badan sel (soma)</h4>
-              <p>Pusat metabolik neuron dan memiliki ciri khas tidak memiliki sentriol.</p>
+              <p>Badan sel merupakan pusat metabolik dari neuron. Ciri khas badan sel neuron ini adalah tidak memiliki
+                sentriol</p>
             </article>
 
             <article class="anatomy-card">
               <div class="anatomy-card-top">
                 <div class="anatomy-icon icon-dendrite" title="Dendrit / Penerima Sinyal">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 22v-9"></path>
                     <path d="M12 13l-4-5-3 2"></path>
                     <path d="M8 8l-1-4"></path>
@@ -393,26 +474,30 @@
                 <span class="anatomy-role-badge">Penerima Sinyal</span>
               </div>
               <h4>Dendrit</h4>
-              <p>Menerima sinyal atau rangsangan dari neuron lain lalu menghantarkannya menuju badan sel.</p>
+              <p>Dendrit berfungsi menerima sinyal atau ransangan dari neuron lain dan menghantarkannya menuju badan
+                sel. Selain itu, dendrit juga berperan dalam menentukan kekuatan sinyal yang diterima oleh neuron.</p>
             </article>
 
             <article class="anatomy-card">
               <div class="anatomy-card-top">
                 <div class="anatomy-icon icon-axon" title="Akson / Pengirim Impuls">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                   </svg>
                 </div>
                 <span class="anatomy-role-badge">Pengirim Impuls</span>
               </div>
               <h4>Akson</h4>
-              <p>Serabut panjang yang mengirimkan impuls dari badan sel menuju neuron lain atau target seperti otot dan kelenjar.</p>
+              <p>Akson merupakan serabut panjang yang berfungsi mengirimkan impuls saraf dari badan sel menuju neuron
+                lain atau target, seperti otot, atau kelenjar.</p>
             </article>
 
             <article class="anatomy-card">
               <div class="anatomy-card-top">
                 <div class="anatomy-icon icon-myelin" title="Selubung Mielin / Isolator">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                     <path d="M9 12l2 2 4-4"></path>
                   </svg>
@@ -420,7 +505,9 @@
                 <span class="anatomy-role-badge">Isolator Mielin</span>
               </div>
               <h4>Selubung mielin</h4>
-              <p>Selaput berlemak seperti wax/lilin yang membungkus sebagian besar serabut saraf panjang dan membantu sinyal listrik berjalan sesuai jalurnya.</p>
+              <p>Selubung mielin merupakan selaput putih yang tersusun atas lemak berbentuk seperti wax/lilin yang
+                membungkus sebagian besar serabut saraf panjang. Selubung ini memastikan sinyal listrik berjalan sesuai
+                jalurnya.</p>
             </article>
           </div>
         </div>
@@ -430,9 +517,26 @@
           <h3>Tiga peran neuron dalam aliran informasi</h3>
         </div>
         <div class="three-cards">
-          <article class="info-card reveal"><div class="card-icon">01</div><h3>Neuron Sensorik</h3><p>Membawa informasi dari reseptor indra menuju sistem saraf pusat, termasuk sentuhan, cahaya, suara, dan rasa sakit.</p></article>
-          <article class="info-card featured reveal"><div class="card-icon">02</div><h3>Interneuron</h3><p>Penghubung neuron sensorik dan motorik di sistem saraf pusat; memproses serta mengintegrasikan informasi sebelum menghasilkan respons.</p></article>
-          <article class="info-card reveal"><div class="card-icon">03</div><h3>Neuron Motorik</h3><p>Mengirimkan perintah dari sistem saraf pusat menuju otot atau kelenjar untuk menghasilkan gerakan atau sekresi.</p></article>
+          <article class="info-card reveal">
+            <div class="card-icon">01</div>
+            <h3>Neuron Sensorik</h3>
+            <p>Neuron sensorik berfungsi membawa informasi dari reseptor indra menuju sistem saraf pusat, seperti
+              rangsangan sentuhan, cahaya, suara, dan rasa sakit. </p>
+          </article>
+          <article class="info-card featured reveal">
+            <div class="card-icon">02</div>
+            <h3>Interneuron</h3>
+            <p>interneuron berperan sebagai penghubung antara neuron sensorik dan neuron motorik di dalam sistem saraf
+              pusat. Interneuron berfungsi memproses dan mengintegrasikan informasi sebelum menghasilkan respons yang
+              sesuai. Jenis neuron ini sangat penting dalam aktivitas kompleks seperti berpikir, belajar, dan
+              pengambilan keputusan</p>
+          </article>
+          <article class="info-card reveal">
+            <div class="card-icon">03</div>
+            <h3>Neuron Motorik</h3>
+            <p>Neuron motorik berfungsi mengirimkan perintah dari sistem saraf pusat menuju otot atau kelenjar untuk
+              menghasilkan respons berupa gerakan atau sekresi</p>
+          </article>
         </div>
       </div>
     </section>
@@ -441,14 +545,15 @@
       <div class="container">
         <div class="section-heading reveal">
           <span class="eyebrow">02 · Potensial Membran</span>
-          <h2>Bagaimana impuls listrik terbentuk?</h2>
+          <h2>Fisiologi Potensial Membran Istirahat dan Generasi Potensial Aksi</h2>
         </div>
 
         <!-- User-Friendly Interactive Stage Explorer -->
         <div class="impuls-explorer reveal">
           <!-- Top Horizontal Stage Navigator -->
           <div class="stage-nav-bar" role="tablist" aria-label="Navigasi 5 Tahapan Potensial Aksi">
-            <button class="stage-nav-item active" data-stage="0" role="tab" aria-selected="true" aria-controls="stage-card">
+            <button class="stage-nav-item active" data-stage="0" role="tab" aria-selected="true"
+              aria-controls="stage-card">
               <span class="nav-step-num">01</span>
               <span class="nav-step-name">Potensial Istirahat</span>
               <span class="nav-step-pill">-70 mV</span>
@@ -526,8 +631,10 @@
                     <span class="card-status-pill" id="stage-card-status">Resting State</span>
                   </div>
                   <div class="card-step-controls">
-                    <button type="button" class="btn-step-icon" id="stage-prev-btn" title="Tahap Sebelumnya" aria-label="Tahap Sebelumnya">←</button>
-                    <button type="button" class="btn-step-icon" id="stage-next-btn" title="Tahap Selanjutnya" aria-label="Tahap Selanjutnya">→</button>
+                    <button type="button" class="btn-step-icon" id="stage-prev-btn" title="Tahap Sebelumnya"
+                      aria-label="Tahap Sebelumnya">←</button>
+                    <button type="button" class="btn-step-icon" id="stage-next-btn" title="Tahap Selanjutnya"
+                      aria-label="Tahap Selanjutnya">→</button>
                   </div>
                 </div>
 
@@ -539,7 +646,8 @@
                   <span class="callout-icon" aria-hidden="true">💡</span>
                   <div class="callout-body">
                     <strong>Inti Proses:</strong>
-                    <p id="stage-card-summary">Bagian dalam neuron bermuatan negatif (-70 mV), dijaga aktif oleh pompa Na⁺/K⁺ yang memompa 3 Na⁺ keluar dan 2 K⁺ ke dalam sel dengan energi ATP.</p>
+                    <p id="stage-card-summary">Bagian dalam neuron bermuatan negatif (-70 mV), dijaga aktif oleh pompa
+                      Na⁺/K⁺ yang memompa 3 Na⁺ keluar dan 2 K⁺ ke dalam sel dengan energi ATP.</p>
                   </div>
                 </div>
 
@@ -547,7 +655,12 @@
                 <div class="stage-slide-content">
                   <span class="slide-label">Penjelasan Lengkap Fisiologi:</span>
                   <p class="slide-text" id="stage-card-text">
-                    Pada keadaan istirahat (<em>resting state</em>), bagian dalam neuron cenderung bermuatan negatif dibandingkan bagian luar sel. Kondisi ini disebut sebagai <strong>potensial istirahat (resting membrane potential)</strong>, yang umumnya berkisar sekitar <strong>-70 mV</strong>. Keadaan ini dipertahankan oleh kerja <strong>pompa natrium-kalium (Na⁺/K⁺ pump)</strong> yang secara aktif memompa ion natrium keluar sel dan ion kalium masuk ke dalam sel dengan menggunakan energi <strong>ATP</strong>.
+                    Pada keadaan istirahat (<em>resting state</em>), bagian dalam neuron cenderung bermuatan negatif
+                    dibandingkan bagian luar sel. Kondisi ini disebut sebagai potensial istirahat (resting
+                    membrane potential), yang umumnya berkisar sekitar -70 mV. Keadaan ini
+                    dipertahankan oleh kerja pompa natrium-kalium (Na⁺/K⁺ pump) yang secara aktif
+                    memompa ion natrium keluar sel dan ion kalium masuk ke dalam sel dengan menggunakan energi
+                    ATP.
                   </p>
                 </div>
 
@@ -582,8 +695,12 @@
       <div class="container">
         <div class="section-heading light-heading reveal">
           <span class="eyebrow light">03 · Sinapsis Kimia</span>
-          <h2>Dari impuls listrik menjadi pesan kimia</h2>
-          <p>Sinapsis adalah titik pertemuan fungsional antarneuron atau antara neuron dan sel target. Di antara membran terdapat celah sinaptik tempat informasi diteruskan sebagai sinyal kimia.</p>
+          <h2>Mekanisme Transmisi Sinapsis Kimia dan Peran
+            Neurotransmitter</h2>
+          <p>Sinapsis adalah titik pertemuan fungsional antara satu neuron dengan neuron lainnya, atau antara neuron
+            dengan sel target seperti otot dan kelenjar. Pada sinapsis tidak terjadi kontak langsung antara membran sel,
+            melainkan terdapat celah kecil yang disebut celah sinaptik (synaptic cleft). Melalui struktur inilah
+            informasi dari satu neuron diteruskan ke neuron berikutnya dalam bentuk sinyal kimia. </p>
         </div>
 
         <div class="synapse-layout">
@@ -591,16 +708,23 @@
             <video class="synapse-video-loop" autoplay loop muted playsinline preload="auto">
               <source src="assets/Video03.mp4" type="video/mp4" />
             </video>
-            <div class="synapse-caption"><span>Presinaptik</span><i aria-hidden="true">→</i><span>Celah sinaptik</span><i aria-hidden="true">→</i><span>Postsinaptik</span></div>
+            <div class="synapse-caption"><span>Presinaptik</span><i aria-hidden="true">→</i><span>Celah
+                sinaptik</span><i aria-hidden="true">→</i><span>Postsinaptik</span></div>
           </div>
 
           <div class="stepper reveal">
             <div class="stepper-head">
-              <div><span class="mini-badge yellow">Mekanisme</span><h3>5 langkah transmisi sinapsis</h3></div>
-              <div class="step-controls" aria-label="Kontrol langkah sinapsis"><button id="step-prev" type="button" aria-label="Langkah sebelumnya">←</button><button id="step-next" type="button" aria-label="Langkah berikutnya">→</button></div>
+              <div><span class="mini-badge yellow">Mekanisme</span>
+                <h3>5 langkah transmisi sinapsis</h3>
+              </div>
+              <div class="step-controls" aria-label="Kontrol langkah sinapsis"><button id="step-prev" type="button"
+                  aria-label="Langkah sebelumnya">←</button><button id="step-next" type="button"
+                  aria-label="Langkah berikutnya">→</button></div>
             </div>
             <div class="step-indicators" id="step-indicators" aria-label="Daftar langkah sinapsis">
-              <button class="active" type="button" data-step="0">1</button><button type="button" data-step="1">2</button><button type="button" data-step="2">3</button><button type="button" data-step="3">4</button><button type="button" data-step="4">5</button>
+              <button class="active" type="button" data-step="0">1</button><button type="button"
+                data-step="1">2</button><button type="button" data-step="2">3</button><button type="button"
+                data-step="3">4</button><button type="button" data-step="4">5</button>
             </div>
             <div class="step-content" id="step-content" aria-live="polite">
               <span class="step-index">01 / 05</span>
@@ -609,7 +733,15 @@
             </div>
             <div class="neurotransmitter-note">
               <span class="spark">✦</span>
-              <p><strong>Peran neurotransmitter</strong><br>Neurotransmitter membawa pesan dari neuron presinaptik ke neuron postsinaptik. Contohnya asetilkolin, dopamin, serotonin, dan norepinefrin.</p>
+              <p><strong>Peran neurotransmitter</strong><br>Neurotransmitter adalah zat kimia pembawa pesan yang
+                berfungsi mentransfer informasi dari neuron presinaptik ke neuron postsinaptik. Contoh neurotransmitter
+                antara lain asetilkolin, dopamin, serotonin, dan norepinefrin, yang masing-masing memiliki fungsi
+                berbeda dalam sistem saraf <br>
+                Setelah proses transmisi selesai, neurotransmitter akan
+                diuraikan oleh enzim, diserap kembali ke neuron presinaptik (reuptake), atau menyebar menjauh dari
+                sinapsis. Mekanisme ini penting untuk menghentikan sinyal agar tidak terjadi stimulasi berlebihan yang
+                dapat mengganggu fungsi sistem saraf.
+              </p>
             </div>
           </div>
         </div>
@@ -626,16 +758,30 @@
 
         <div class="brain-tabs reveal">
           <div class="tab-list" role="tablist" aria-label="Bagian sistem saraf pusat">
-            <button class="tab-button active" role="tab" aria-selected="true" aria-controls="panel-serebrum" id="tab-serebrum" data-tab="serebrum">Serebrum</button>
-            <button class="tab-button" role="tab" aria-selected="false" aria-controls="panel-serebelum" id="tab-serebelum" data-tab="serebelum">Serebelum</button>
-            <button class="tab-button" role="tab" aria-selected="false" aria-controls="panel-brainstem" id="tab-brainstem" data-tab="brainstem">Batang Otak</button>
-            <button class="tab-button" role="tab" aria-selected="false" aria-controls="panel-diensefalon" id="tab-diensefalon" data-tab="diensefalon">Diensefalon</button>
-            <button class="tab-button" role="tab" aria-selected="false" aria-controls="panel-spinal" id="tab-spinal" data-tab="spinal">Sumsum Tulang Belakang</button>
+            <button class="tab-button active" role="tab" aria-selected="true" aria-controls="panel-serebrum"
+              id="tab-serebrum" data-tab="serebrum">Serebrum</button>
+            <button class="tab-button" role="tab" aria-selected="false" aria-controls="panel-serebelum"
+              id="tab-serebelum" data-tab="serebelum">Serebelum</button>
+            <button class="tab-button" role="tab" aria-selected="false" aria-controls="panel-brainstem"
+              id="tab-brainstem" data-tab="brainstem">Batang Otak</button>
+            <button class="tab-button" role="tab" aria-selected="false" aria-controls="panel-diensefalon"
+              id="tab-diensefalon" data-tab="diensefalon">Diensefalon</button>
+            <button class="tab-button" role="tab" aria-selected="false" aria-controls="panel-spinal" id="tab-spinal"
+              data-tab="spinal">Sumsum Tulang Belakang</button>
           </div>
 
           <div class="tab-panels">
-            <article class="tab-panel active" role="tabpanel" id="panel-serebrum" aria-labelledby="tab-serebrum" data-panel="serebrum">
-              <div class="tab-copy"><span class="pill">Otak Besar</span><h3>Serebrum</h3><p>Memiliki porsi otak terbesar, terbagi menjadi otak kanan dan kiri, bersifat kontralateral, dilapisi korteks serebral, serta memiliki lipatan Gyrus dan Sulcus.</p><div class="lobes-grid"><span><b>Frontalis</b>Motorik, bicara, emosi, penalaran & perencanaan.</span><span><b>Parietalis</b>Sentuhan, tekanan, nyeri & spasial.</span><span><b>Oksipitalis</b>Pemrosesan visual.</span><span><b>Temporalis</b>Pendengaran, memori & pemahaman bahasa.</span></div></div>
+            <article class="tab-panel active" role="tabpanel" id="panel-serebrum" aria-labelledby="tab-serebrum"
+              data-panel="serebrum">
+              <div class="tab-copy"><span class="pill">Otak Besar</span>
+                <h3>Serebrum</h3>
+                <p>Memiliki porsi otak terbesar, terbagi menjadi otak kanan dan kiri, bersifat kontralateral, dilapisi
+                  korteks serebral, serta memiliki lipatan Gyrus dan Sulcus.</p>
+                <div class="lobes-grid"><span><b>Frontalis</b>Motorik, bicara, emosi, penalaran &
+                    perencanaan.</span><span><b>Parietalis</b>Sentuhan, tekanan, nyeri &
+                    spasial.</span><span><b>Oksipitalis</b>Pemrosesan visual.</span><span><b>Temporalis</b>Pendengaran,
+                    memori & pemahaman bahasa.</span></div>
+              </div>
               <div class="tab-visual">
                 <video class="media-video-loop" autoplay loop muted playsinline preload="auto">
                   <source src="assets/Video04.mp4" type="video/mp4" />
@@ -644,8 +790,16 @@
               </div>
             </article>
 
-            <article class="tab-panel" role="tabpanel" id="panel-serebelum" aria-labelledby="tab-serebelum" data-panel="serebelum" hidden>
-              <div class="tab-copy"><span class="pill">Otak Kecil</span><h3>Serebelum</h3><p>Terletak di bagian bawah belakang otak besar, tepat di belakang batang otak. Berfungsi menyelaraskan dan mengkoordinasikan gerakan.</p><div class="stack-list"><span><b>Lobus Anterior</b> Mengatur postur & tonus otot.</span><span><b>Lobus Posterior</b> Mengatur keterampilan motorik halus.</span><span><b>Lobus Flocculonodularis</b> Menjaga keseimbangan & gerakan bola mata.</span></div></div>
+            <article class="tab-panel" role="tabpanel" id="panel-serebelum" aria-labelledby="tab-serebelum"
+              data-panel="serebelum" hidden>
+              <div class="tab-copy"><span class="pill">Otak Kecil</span>
+                <h3>Serebelum</h3>
+                <p>Terdapat di bagian bawah belakang otak besar, tepat di belakang batang otak. Berfungsi untuk
+                  menyelaraskan dan mengkoordinasikan gerakan. Otak kecil ini terbagi menjadi 3 lobus utama yaitu:</p>
+                <div class="stack-list"><span><b>Lobus Anterior</b> Mengatur postur & tonus otot.</span><span><b>Lobus
+                      Posterior</b> Mengatur keterampilan motorik halus.</span><span><b>Lobus Flocculonodularis</b>
+                    Menjaga keseimbangan & gerakan bola mata.</span></div>
+              </div>
               <div class="tab-visual">
                 <video class="media-video-loop" autoplay loop muted playsinline preload="auto">
                   <source src="assets/Video05.mp4" type="video/mp4" />
@@ -654,8 +808,18 @@
               </div>
             </article>
 
-            <article class="tab-panel" role="tabpanel" id="panel-brainstem" aria-labelledby="tab-brainstem" data-panel="brainstem" hidden>
-              <div class="tab-copy"><span class="pill">Penghubung</span><h3>Batang Otak (Brainstem)</h3><p>Menghubungkan otak besar (serebrum) dan sumsum tulang belakang (medula spinalis).</p><div class="stack-list"><span><b>Otak Tengah (Mesensefalon)</b> Pusat refleks penglihatan, pendengaran, dan kontrol gerakan.</span><span><b>Pons</b> Jembatan sistem saraf & pengatur irama pernapasan.</span><span><b>Medulla Oblongata</b> Pusat refleks otonom vital seperti denyut jantung, tekanan darah, pernapasan, batuk, bersin, dan menelan.</span></div></div>
+            <article class="tab-panel" role="tabpanel" id="panel-brainstem" aria-labelledby="tab-brainstem"
+              data-panel="brainstem" hidden>
+              <div class="tab-copy"><span class="pill">Penghubung</span>
+                <h3>Batang Otak (Brainstem)</h3>
+                <p>Penghubung antara otak besar (serebrum) dansumsum tulang belakang (medula spinalis). Ada 3 bagian
+                  utama dari batang otak yaitu:</p>
+                <div class="stack-list"><span><b>Otak Tengah (Mesensefalon)</b> Pusat refleks penglihatan, superior
+                    colli, pendengaran (inferior colliculi), & kontrol gerakan (substantia
+                    nigra).</span><span><b>Pons</b> Jembatan sistem saraf & pengatur irama
+                    pernapasan.</span><span><b>Medulla Oblongata</b> Pusat refleks otonom vital seperti denyut jantung,
+                    tekanan darah, pernapasan, batuk, bersin, dan menelan.</span></div>
+              </div>
               <div class="tab-visual">
                 <video class="media-video-loop" autoplay loop muted playsinline preload="auto">
                   <source src="assets/Video06.mp4" type="video/mp4" />
@@ -664,19 +828,31 @@
               </div>
             </article>
 
-            <article class="tab-panel" role="tabpanel" id="panel-diensefalon" aria-labelledby="tab-diensefalon" data-panel="diensefalon" hidden>
-              <div class="tab-copy wide"><span class="pill">Otak Antara</span><h3>Diensefalon</h3><p>Terletak di antara otak besar dan batang otak, dengan empat bagian utama:</p><div class="dien-grid"><span><b>Talamus</b>Stasiun penerima & pemancar sinyal sensorik ke korteks otak.</span><span><b>Hipotalamus</b>Pusat homeostasis, suhu, emosi, dorongan biologis & penghubung sistem hormon.</span><span><b>Epitalamus</b>Memuat kelenjar pineal penghasil melatonin untuk mengatur pola tidur.</span><span><b>Subtalamus</b>Membantu koordinasi dan pemulusan gerakan motorik.</span></div></div>
+            <article class="tab-panel" role="tabpanel" id="panel-diensefalon" aria-labelledby="tab-diensefalon"
+              data-panel="diensefalon" hidden>
+              <div class="tab-copy wide"><span class="pill">Otak Antara</span>
+                <h3>Diensefalon</h3>
+                <p>Terletak di antara otak besar dan batang otak, dengan empat bagian utama:</p>
+                <div class="dien-grid"><span><b>Talamus</b>Stasiun penerima & pemancar sinyal sensorik ke korteks
+                    otak.</span><span><b>Hipotalamus</b>Pusat homeostasis, suhu, emosi, dorongan biologis & penghubung
+                    sistem hormon.</span><span><b>Epitalamus</b>Memuat kelenjar pineal penghasil melatonin untuk
+                    mengatur pola tidur.</span><span><b>Subtalamus</b>Membantu koordinasi dan pemulusan gerakan
+                    motorik.</span></div>
+              </div>
             </article>
 
-            <article class="tab-panel" role="tabpanel" id="panel-spinal" aria-labelledby="tab-spinal" data-panel="spinal" hidden>
+            <article class="tab-panel" role="tabpanel" id="panel-spinal" aria-labelledby="tab-spinal"
+              data-panel="spinal" hidden>
               <div class="tab-copy">
                 <span class="pill">Medula Spinalis</span>
                 <h3>Sumsum Tulang Belakang</h3>
-                <p>Lanjutan dari medulla oblongata yang memanjang di saluran tulang belakang, dilindungi tiga lapisan meninges dan memiliki cairan serebrospinal.</p>
+                <p>Lanjutan dari medulla oblongata yang memanjang di saluran tulang belakang, dilindungi tiga lapisan
+                  meninges dan memiliki cairan serebrospinal.</p>
                 <div class="stack-list">
                   <span><b>Jalur Asenden</b> Menghantar impuls indera dari tubuh ke otak.</span>
                   <span><b>Jalur Desenden</b> Menghantar perintah gerak dari otak ke organ/otot.</span>
-                  <span><b>Pusat Integrasi Refleks</b> Mengendalikan refleks spinal spontan tanpa menunggu instruksi otak besar.</span>
+                  <span><b>Pusat Integrasi Refleks</b> Mengendalikan refleks spinal spontan tanpa menunggu instruksi
+                    otak besar.</span>
                 </div>
               </div>
               <div class="tab-visual">
@@ -694,9 +870,19 @@
                   <p>Tiga komponen struktural utama yang tampak pada potongan melintang medula spinalis:</p>
                 </div>
                 <div class="anatomy-strip">
-                  <div><span>01</span><h4>Substansia Alba</h4><p>Di bagian luar, terdiri dari serat saraf bermielin dan memuat traktus asenden serta desenden.</p></div>
-                  <div><span>02</span><h4>Substansia Grisea</h4><p>Di bagian dalam, berisi akumulasi badan sel neuron & interneuron, termasuk tanduk dorsal, ventral, dan lateral.</p></div>
-                  <div><span>03</span><h4>Kanalis Centralis</h4><p>Saluran kecil di pusat medula spinalis yang berisi cairan serebrospinal.</p></div>
+                  <div><span>01</span>
+                    <h4>Substansia Alba</h4>
+                    <p>Di bagian luar, terdiri dari serat saraf bermielin dan memuat traktus asenden serta desenden.</p>
+                  </div>
+                  <div><span>02</span>
+                    <h4>Substansia Grisea</h4>
+                    <p>Di bagian dalam, berisi akumulasi badan sel neuron & interneuron, termasuk tanduk dorsal,
+                      ventral, dan lateral.</p>
+                  </div>
+                  <div><span>03</span>
+                    <h4>Kanalis Centralis</h4>
+                    <p>Saluran kecil di pusat medula spinalis yang berisi cairan serebrospinal.</p>
+                  </div>
                 </div>
               </div>
             </article>
@@ -709,24 +895,76 @@
       <div class="container">
         <div class="section-heading reveal">
           <span class="eyebrow">05 · Refleks & Sistem Otonom</span>
-          <h2>Respons cepat tubuh tanpa menunggu proses sadar</h2>
-          <p>Lengkung refleks adalah jalur saraf cepat dan otomatis untuk tindakan perlindungan tubuh, sedangkan sistem otonom mengatur respons tubuh pada kondisi aktif maupun istirahat.</p>
+          <h2> Jalur Lengkung refleks Spinal dan Kranial</h2>
+          <p>Lengkung refleks adalah jalur saraf cepat dan otomatis untuk tindakan perlindungan tubuh, sedangkan sistem
+            otonom mengatur respons tubuh pada kondisi aktif maupun istirahat.</p>
         </div>
 
         <div class="reflex-grid">
           <article class="reflex-card reveal">
-            <div class="reflex-copy"><span class="pill">Spinal</span><h3>Jalur Refleks Saraf Spinal</h3><p>Diproses langsung di sumsum tulang belakang dan mengontrol 31 pasang saraf spinal.</p><ol><li>Reseptor</li><li>Neuron Sensorik</li><li>Sumsum Tulang Belakang</li><li>Neuron Motorik</li><li>Efektor</li></ol></div>
-            <div class="reflex-image"><img src="assets/reflex-spinal.png" alt="Diagram jalur refleks saraf spinal" loading="lazy" /></div>
+            <div class="reflex-copy"><span class="pill">Spinal</span>
+              <h3>Jalur Refleks Saraf Spinal</h3>
+              <p>Diproses langsung di sumsum tulang belakang dan mengontrol 31 pasang saraf spinal.</p>
+              <ol>
+                <li>Reseptor</li>
+                <li>Neuron Sensorik</li>
+                <li>Sumsum Tulang Belakang</li>
+                <li>Neuron Motorik</li>
+                <li>Efektor</li>
+              </ol>
+            </div>
+            <div class="reflex-image">
+              <video class="reflex-video-loop" autoplay loop muted playsinline preload="auto">
+                <source src="assets/Video08.mp4" type="video/mp4" />
+              </video>
+            </div>
           </article>
           <article class="reflex-card reveal">
-            <div class="reflex-copy"><span class="pill">Kranial</span><h3>Jalur Refleks Saraf Kranial</h3><p>Diproses langsung di batang otak dan mengontrol 12 pasang saraf kranial pada area kepala, wajah, dan organ indra.</p><ol><li>Reseptor: retina</li><li>Neuron Sensorik: optic nerve</li><li>Pusat Integrasi: batang otak</li><li>Neuron Motorik: okulomotor</li><li>Efektor: otot pupil mata</li></ol></div>
-            <div class="reflex-image"><img src="assets/reflex-cranial.png" alt="Diagram jalur refleks saraf kranial pada mata" loading="lazy" /></div>
+            <div class="reflex-copy"><span class="pill">Kranial</span>
+              <h3>Jalur Refleks Saraf Kranial</h3>
+              <p>Diproses langsung di batang otak dan mengontrol 12 pasang saraf kranial pada area kepala, wajah, dan
+                organ indra.</p>
+              <ol>
+                <li>Reseptor: retina</li>
+                <li>Neuron Sensorik: optic nerve</li>
+                <li>Pusat Integrasi: batang otak</li>
+                <li>Neuron Motorik: okulomotor</li>
+                <li>Efektor: otot pupil mata</li>
+              </ol>
+            </div>
+            <div class="reflex-image">
+              <video class="reflex-video-loop" autoplay loop muted playsinline preload="auto">
+                <source src="assets/Video09.mp4" type="video/mp4" />
+              </video>
+            </div>
           </article>
         </div>
 
         <div class="autonomic-panel reveal">
-          <div class="autonomic-image"><img src="assets/autonomic.png" alt="Perbandingan fungsi sistem saraf simpatis dan parasimpatis" loading="lazy" /></div>
-          <div class="autonomic-copy"><span class="eyebrow">Sistem Saraf Otonom</span><h3>Dua mode respons tubuh</h3><div class="compare-grid"><article><span class="compare-tag">Fight or Flight</span><h4>Simpatis</h4><p>Mendominasi saat stres atau situasi darurat. Memacu kinerja organ vital seperti denyut jantung dan pernapasan, serta menghambat fungsi non-mendesak seperti pencernaan.</p></article><article><span class="compare-tag rest">Rest and Digest</span><h4>Parasimpatis</h4><p>Mendominasi saat tubuh tenang dan beristirahat. Menenangkan laju kardiovaskular, melambatkan pernapasan, dan mengaktifkan kembali proses pencernaan.</p></article></div></div>
+          <div class="autonomic-image">
+            <video class="autonomic-video-loop" autoplay loop muted playsinline preload="auto">
+              <source src="assets/Video10.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="autonomic-copy"><span class="eyebrow">Sistem Saraf Otonom</span>
+            <h3>Perbedaan Fisiologi Sistem Saraf Simpatis dan Parasimpatis</h3>
+            <div class="compare-grid">
+              <article><span class="compare-tag">Fight or Flight</span>
+                <h4>Simpatis</h4>
+                <p>Sistem Saraf Simpatis merupakan divisi Sistem Saraf Otonom yang mengendalikan respons tubuh saat
+                  menghadapi kondisi stres atau situasi darurat (fight or flight). Mekanisme utamanya berfokus pada
+                  pemanfaatan energi secara cepat dengan memacu kinerja organ vital, seperti meningkatkan denyut jantung
+                  dan pernapasan, sembari menghambat fungsi nonmendesak seperti pencernaan.</p>
+              </article>
+              <article><span class="compare-tag rest">Rest and Digest</span>
+                <h4>Parasimpatis</h4>
+                <p>Sistem Saraf Parasimpatis merupakan divisi Sistem Saraf Otonom yang mendominasi saat tubuh berada
+                  dalam keadaan tenang, aman, dan beristirahat (rest and digest). Mekanisme utamanya berfokus pada
+                  pemulihan dan pemeliharaan energi tubuh dengan cara menenangkan laju kardiovaskular, melambatkan
+                  pernapasan, serta mengaktifkan kembali proses pencernaan.</p>
+              </article>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -735,15 +973,70 @@
       <div class="container">
         <div class="section-heading light-heading reveal">
           <span class="eyebrow light">06 · Kelainan Sistem Saraf</span>
-          <h2>Empat kondisi yang dibahas dalam materi</h2>
-          <p>Klik kartu untuk membaca ringkasan, lalu gunakan ilustrasi sebagai penguat visual.</p>
+          <h2>Kelainan Sistem Saraf</h2>
         </div>
 
         <div class="disorder-grid">
-          <article class="disorder-card reveal" tabindex="0"><div class="disorder-image"><img src="assets/stroke.png" alt="Ilustrasi stroke iskemik dan hemoragik" loading="lazy" /><span>01</span></div><div class="disorder-body"><h3>Stroke</h3><p>Gangguan fungsi otak akut akibat terhentinya pasokan darah ke otak karena penyumbatan atau pecahnya pembuluh darah, sehingga jaringan saraf kekurangan oksigen secara mendadak.</p></div></article>
-          <article class="disorder-card reveal" tabindex="0"><div class="disorder-image"><img src="assets/multiple-sclerosis.png" alt="Ilustrasi multiple sclerosis pada selubung mielin" loading="lazy" /><span>02</span></div><div class="disorder-body"><h3>Multiple Sclerosis (MS)</h3><p>Penyakit autoimun kronis pada sistem saraf pusat ketika sistem kekebalan tubuh merusak selubung mielin dan menghambat penghantaran impuls listrik saraf.</p></div></article>
-          <article class="disorder-card reveal" tabindex="0"><div class="disorder-image"><img src="assets/bells-palsy.png" alt="Ilustrasi Bell's Palsy pada salah satu sisi wajah" loading="lazy" /><span>03</span></div><div class="disorder-body"><h3>Bell's Palsy</h3><p>Kelemahan atau kelumpuhan mendadak pada otot salah satu sisi wajah akibat peradangan atau penekanan pada Nervus Fasialis (Saraf Kranial VII).</p></div></article>
-          <article class="disorder-card reveal" tabindex="0"><div class="disorder-image"><img src="assets/parkinson.png" alt="Ilustrasi penyakit Parkinson" loading="lazy" /><span>04</span></div><div class="disorder-body"><h3>Parkinson</h3><p>Gangguan degeneratif sistem saraf pusat akibat kemunduran sel saraf penghasil dopamin di substantia nigra, yang memengaruhi kontrol gerakan tubuh.</p></div></article>
+          <article class="disorder-card reveal" tabindex="0">
+            <div class="disorder-image">
+              <video class="disorder-video-loop" autoplay loop muted playsinline preload="auto">
+                <source src="assets/Video11.mp4" type="video/mp4" />
+              </video>
+              <span>01</span>
+            </div>
+            <div class="disorder-body">
+              <h3>Stroke</h3>
+              <p>Stroke merupakan gangguan fungsi otak akut akibat terhentinya pasokan darah ke otak, baik karena
+                penyumbatan (stroke iskemik) maupun pecahnya pembuluh darah (stroke hemoragik). Kondisi ini menyebabkan
+                sel-sel otak mengalami kekurangan oksigen secara mendadak, sehingga memicu kerusakan jaringan saraf dan
+                penurunan fungsi tubuh.</p>
+            </div>
+          </article>
+          <article class="disorder-card reveal" tabindex="0">
+            <div class="disorder-image">
+              <video class="disorder-video-loop" autoplay loop muted playsinline preload="auto">
+                <source src="assets/Video12.mp4" type="video/mp4" />
+              </video>
+              <span>02</span>
+            </div>
+            <div class="disorder-body">
+              <h3>Multiple Sclerosis (MS)</h3>
+              <p>Multiple Sclerosis merupakan penyakit autoimun kronis pada sistem saraf pusat yang terjadi ketika
+                sistem kekebalan tubuh merusak selubung mielin (pelindung serabut saraf). Kerusakan ini menghambat
+                penghantaran impuls listrik saraf, sehingga memicu gangguan koordinasi, kelemahan otot, dan gangguan
+                penglihatan.</p>
+            </div>
+          </article>
+          <article class="disorder-card reveal" tabindex="0">
+            <div class="disorder-image">
+              <video class="disorder-video-loop" autoplay loop muted playsinline preload="auto">
+                <source src="assets/Video13.mp4" type="video/mp4" />
+              </video>
+              <span>03</span>
+            </div>
+            <div class="disorder-body">
+              <h3>Bell's Palsy</h3>
+              <p>Bell's Palsy merupakan kondisi kelumpuhan atau kelemahan mendadak pada otot salah satu sisi wajah
+                akibat peradangan atau penekanan pada Nervus Fasialis (Saraf Kranial VII). Gangguan ini bersifat
+                sementara dan menyebabkan wajah tampak melorot, kesulitan tersenyum atau menutup mata, serta penurunan
+                fungsi pengecapan pada lidah.</p>
+            </div>
+          </article>
+          <article class="disorder-card reveal" tabindex="0">
+            <div class="disorder-image">
+              <video class="disorder-video-loop" autoplay loop muted playsinline preload="auto">
+                <source src="assets/Video14.mp4" type="video/mp4" />
+              </video>
+              <span>04</span>
+            </div>
+            <div class="disorder-body">
+              <h3>Parkinson</h3>
+              <p>Penyakit Parkinson merupakan gangguan degeneratif sistem saraf pusat yang terjadi akibat kemunduran
+                sel-sel saraf penghasil dopamin di area substantia nigra otak. Defisiensi dopamin ini mengganggu sistem
+                kontrol gerakan tubuh, sehingga memicu gejala khas berupa tremor saat istirahat (resting tremor),
+                kekakuan otot, kelambatan gerak (bradikinesia), serta ketidakseimbangan postur</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -758,30 +1051,126 @@
         </div>
         <form class="quiz-form" id="quiz-form">
           <fieldset class="quiz-question" data-answer="b">
-            <legend><span>01</span> Bagian neuron yang membawa impuls dari badan sel menuju neuron lain atau target adalah...</legend>
-            <label><input type="radio" name="q1" value="a" /> Dendrit</label>
-            <label><input type="radio" name="q1" value="b" /> Akson</label>
-            <label><input type="radio" name="q1" value="c" /> Soma</label>
+            <legend class="quiz-legend">
+              <span class="quiz-num">01</span>
+              <span class="quiz-question-text">Bagian neuron yang membawa impuls dari badan sel menuju neuron lain atau
+                target adalah...</span>
+            </legend>
+            <div class="quiz-options">
+              <label class="quiz-option">
+                <input type="radio" name="q1" value="a" />
+                <span class="opt-badge">A</span>
+                <span class="opt-text">Dendrit</span>
+                <span class="opt-status-icon" aria-hidden="true"></span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q1" value="b" />
+                <span class="opt-badge">B</span>
+                <span class="opt-text">Akson</span>
+                <span class="opt-status-icon" aria-hidden="true"></span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q1" value="c" />
+                <span class="opt-badge">C</span>
+                <span class="opt-text">Soma</span>
+                <span class="opt-status-icon" aria-hidden="true"></span>
+              </label>
+            </div>
           </fieldset>
+
           <fieldset class="quiz-question" data-answer="c">
-            <legend><span>02</span> Potensial istirahat neuron pada materi ini umumnya berkisar...</legend>
-            <label><input type="radio" name="q2" value="a" /> +70 mV</label>
-            <label><input type="radio" name="q2" value="b" /> 0 mV</label>
-            <label><input type="radio" name="q2" value="c" /> -70 mV</label>
+            <legend class="quiz-legend">
+              <span class="quiz-num">02</span>
+              <span class="quiz-question-text">Potensial istirahat neuron pada materi ini umumnya berkisar...</span>
+            </legend>
+            <div class="quiz-options">
+              <label class="quiz-option">
+                <input type="radio" name="q2" value="a" />
+                <span class="opt-badge">A</span>
+                <span class="opt-text">+70 mV</span>
+                <span class="opt-status-icon" aria-hidden="true"></span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q2" value="b" />
+                <span class="opt-badge">B</span>
+                <span class="opt-text">0 mV</span>
+                <span class="opt-status-icon" aria-hidden="true"></span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q2" value="c" />
+                <span class="opt-badge">C</span>
+                <span class="opt-text">-70 mV</span>
+                <span class="opt-status-icon" aria-hidden="true"></span>
+              </label>
+            </div>
           </fieldset>
+
           <fieldset class="quiz-question" data-answer="a">
-            <legend><span>03</span> Bagian otak yang berperan mengatur postur dan tonus otot pada materi adalah...</legend>
-            <label><input type="radio" name="q3" value="a" /> Lobus Anterior serebelum</label>
-            <label><input type="radio" name="q3" value="b" /> Lobus Oksipitalis</label>
-            <label><input type="radio" name="q3" value="c" /> Talamus</label>
+            <legend class="quiz-legend">
+              <span class="quiz-num">03</span>
+              <span class="quiz-question-text">Bagian otak yang berperan mengatur postur dan tonus otot pada materi
+                adalah...</span>
+            </legend>
+            <div class="quiz-options">
+              <label class="quiz-option">
+                <input type="radio" name="q3" value="a" />
+                <span class="opt-badge">A</span>
+                <span class="opt-text">Lobus Anterior Serebelum</span>
+                <span class="opt-status-icon" aria-hidden="true"></span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q3" value="b" />
+                <span class="opt-badge">B</span>
+                <span class="opt-text">Lobus Oksipitalis</span>
+                <span class="opt-status-icon" aria-hidden="true"></span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q3" value="c" />
+                <span class="opt-badge">C</span>
+                <span class="opt-text">Talamus</span>
+                <span class="opt-status-icon" aria-hidden="true"></span>
+              </label>
+            </div>
           </fieldset>
+
           <fieldset class="quiz-question" data-answer="b">
-            <legend><span>04</span> Sistem saraf yang mendominasi saat tubuh tenang dan beristirahat adalah...</legend>
-            <label><input type="radio" name="q4" value="a" /> Simpatis</label>
-            <label><input type="radio" name="q4" value="b" /> Parasimpatis</label>
-            <label><input type="radio" name="q4" value="c" /> Sensorik</label>
+            <legend class="quiz-legend">
+              <span class="quiz-num">04</span>
+              <span class="quiz-question-text">Sistem saraf yang mendominasi saat tubuh tenang dan beristirahat
+                adalah...</span>
+            </legend>
+            <div class="quiz-options">
+              <label class="quiz-option">
+                <input type="radio" name="q4" value="a" />
+                <span class="opt-badge">A</span>
+                <span class="opt-text">Simpatis</span>
+                <span class="opt-status-icon" aria-hidden="true"></span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q4" value="b" />
+                <span class="opt-badge">B</span>
+                <span class="opt-text">Parasimpatis</span>
+                <span class="opt-status-icon" aria-hidden="true"></span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q4" value="c" />
+                <span class="opt-badge">C</span>
+                <span class="opt-text">Sensorik</span>
+                <span class="opt-status-icon" aria-hidden="true"></span>
+              </label>
+            </div>
           </fieldset>
-          <div class="quiz-actions"><button class="btn btn-green" type="submit">Periksa Jawaban</button><button class="btn btn-subtle" type="reset">Ulangi</button></div>
+
+          <div class="quiz-actions">
+            <button class="btn btn-green" type="submit">
+              <span>Periksa Jawaban</span>
+              <span aria-hidden="true">✓</span>
+            </button>
+            <button class="btn btn-subtle" type="reset">
+              <span>Ulangi</span>
+              <span aria-hidden="true">↺</span>
+            </button>
+          </div>
           <p class="quiz-feedback" id="quiz-feedback" aria-live="polite"></p>
         </form>
       </div>
@@ -795,21 +1184,35 @@
           <p>Daftar berikut mempertahankan sumber yang tercantum pada bagian referensi materi Kelompok 5.</p>
         </div>
         <div class="references reveal">
-          <details open><summary>Jurnal, buku, dan sumber utama <span>+</span></summary><div class="reference-list">
-            <p>Akmal Subarjah, M., Muhammad Hasan, R., & Demexsi Rahmat, W. (2024). <em>Sistem Saraf Otonom: Mengatur Aktivitas Tanpa Kesadaran.</em> Journal Human Resource Strengthening, 1(1), 67–70.</p>
-            <p>Dinata, C. A., Safrita, Y. S., & Sastri, S. (2013). <em>Gambaran Faktor Risiko dan Tipe Stroke pada Pasien Rawat Inap di Bagian Penyakit Dalam RSUD Kabupaten Solok Selatan Periode 1 Januari 2010 - 31 Juni 2012.</em> Jurnal Kesehatan Andalas, 2(2), 57. https://doi.org/10.25077/jka.v2i2.119</p>
-            <p>Dobson, R., & Giovannoni, G. (2019). <em>Multiple sclerosis - a review.</em> European Journal of Neurology, 26(1), 27–40. https://doi.org/10.1111/ene.13819</p>
-            <p>Eva Zulisa, dkk. (2021). <em>Anatomi dan Fisiologi Tubuh Manusia.</em> penerbitzaini.com</p>
-            <p>Meutia, S., Utami, N., Rahmawati, S., & Himayani, R. (2021). <em>Sistem Saraf Pusat dan Perifer.</em> Medical Profession Journal of Lampung, 11(2), 306–311.</p>
-            <p>Muttaqin, A. (2020). <em>Asuhan Keperawatan Klien dengan Gangguan Sistem Persarafan.</em> Salemba Medika.</p>
-            <p>Ramadhani, K., Rachmawati Widyaningrum, Mp., & Mahasiswa Gizi Dan Kesehatan, B. (n.d.). <em>Buku Ajar Dasar-Dasar Anatomi dan Fisiologi Tubuh Manusia.</em></p>
-            <p>Sari, N. R. (2021). <em>Sistem Saraf.</em> NUSAMEDIA.</p>
-            <p>Tranggono Yudo Utomo, dr, & dr Frisca Angreni, F. (n.d.). <em>Dasar-Dasar Ilmu Saraf: Memahami Struktur dan Fungsi Otak Manusia.</em></p>
-            <p>Widodo, H. (2019). <em>Memahami Sistem Saraf Manusia.</em> Mutiara Aksara.</p>
-            <p>Yudawijaya & Pariama. (2024). <em>Sistem Saraf Periferal: Struktur, Fungsi, dan Gangguan Klinis.</em> Yayasan Putra Adi Dharma.</p>
-            <p>Yunita, A. S. (2023). <em>Struktur Otak Manusia.</em></p>
-            <p>Zulkifli, Z., Lahmi, A., Dahlan, D., & Hakim, R. (2025). <em>Mekanisme Kerja Otak dan Sistem Saraf: Perspektif Neurosains Pendidikan Islam.</em> Menara Ilmu, 19(1), 118–130. https://doi.org/10.31869/mi.v19i1.6138</p>
-          </div></details>
+          <details open>
+            <summary>Jurnal, buku, dan sumber utama <span>+</span></summary>
+            <div class="reference-list">
+              <p>Akmal Subarjah, M., Muhammad Hasan, R., & Demexsi Rahmat, W. (2024). <em>Sistem Saraf Otonom: Mengatur
+                  Aktivitas Tanpa Kesadaran.</em> Journal Human Resource Strengthening, 1(1), 67–70.</p>
+              <p>Dinata, C. A., Safrita, Y. S., & Sastri, S. (2013). <em>Gambaran Faktor Risiko dan Tipe Stroke pada
+                  Pasien Rawat Inap di Bagian Penyakit Dalam RSUD Kabupaten Solok Selatan Periode 1 Januari 2010 - 31
+                  Juni 2012.</em> Jurnal Kesehatan Andalas, 2(2), 57. https://doi.org/10.25077/jka.v2i2.119</p>
+              <p>Dobson, R., & Giovannoni, G. (2019). <em>Multiple sclerosis - a review.</em> European Journal of
+                Neurology, 26(1), 27–40. https://doi.org/10.1111/ene.13819</p>
+              <p>Eva Zulisa, dkk. (2021). <em>Anatomi dan Fisiologi Tubuh Manusia.</em> penerbitzaini.com</p>
+              <p>Meutia, S., Utami, N., Rahmawati, S., & Himayani, R. (2021). <em>Sistem Saraf Pusat dan Perifer.</em>
+                Medical Profession Journal of Lampung, 11(2), 306–311.</p>
+              <p>Muttaqin, A. (2020). <em>Asuhan Keperawatan Klien dengan Gangguan Sistem Persarafan.</em> Salemba
+                Medika.</p>
+              <p>Ramadhani, K., Rachmawati Widyaningrum, Mp., & Mahasiswa Gizi Dan Kesehatan, B. (n.d.). <em>Buku Ajar
+                  Dasar-Dasar Anatomi dan Fisiologi Tubuh Manusia.</em></p>
+              <p>Sari, N. R. (2021). <em>Sistem Saraf.</em> NUSAMEDIA.</p>
+              <p>Tranggono Yudo Utomo, dr, & dr Frisca Angreni, F. (n.d.). <em>Dasar-Dasar Ilmu Saraf: Memahami Struktur
+                  dan Fungsi Otak Manusia.</em></p>
+              <p>Widodo, H. (2019). <em>Memahami Sistem Saraf Manusia.</em> Mutiara Aksara.</p>
+              <p>Yudawijaya & Pariama. (2024). <em>Sistem Saraf Periferal: Struktur, Fungsi, dan Gangguan Klinis.</em>
+                Yayasan Putra Adi Dharma.</p>
+              <p>Yunita, A. S. (2023). <em>Struktur Otak Manusia.</em></p>
+              <p>Zulkifli, Z., Lahmi, A., Dahlan, D., & Hakim, R. (2025). <em>Mekanisme Kerja Otak dan Sistem Saraf:
+                  Perspektif Neurosains Pendidikan Islam.</em> Menara Ilmu, 19(1), 118–130.
+                https://doi.org/10.31869/mi.v19i1.6138</p>
+            </div>
+          </details>
         </div>
       </div>
     </section>
@@ -818,12 +1221,45 @@
   <footer class="site-footer">
     <div class="footer-pattern" aria-hidden="true"></div>
     <div class="container footer-grid">
-      <div class="footer-title"><span class="eyebrow light">Kelompok 5</span><h2>Terima kasih.</h2><p>Sampai jumpa di pertemuan selanjutnya.</p></div>
-      <div class="footer-members"><p><strong>Mia Nurhalimah</strong><span>242154111055</span></p><p><strong>Khalisa Latifah</strong><span>242154111057</span></p><p><strong>Lina Agustin</strong><span>242154111059</span></p></div>
-      <a class="back-top" href="#top">Kembali ke atas ↑</a>
+      <div class="footer-title"><span class="eyebrow light">Kelompok 5</span>
+        <h2>Terima kasih.</h2>
+        <p>Sampai jumpa di pertemuan selanjutnya.</p>
+      </div>
+      <div class="footer-members">
+        <p><strong>Mia Nurhalimah</strong><span>242154111055</span></p>
+        <p><strong>Khalisa Latifah</strong><span>242154111057</span></p>
+        <p><strong>Lina Agustin</strong><span>242154111059</span></p>
+      </div>
+      <a class="back-top" href="#top" id="back-to-top-link">Kembali ke atas ↑</a>
     </div>
   </footer>
 
+  <!-- Audio Background & Floating Music Control -->
+  <audio id="bg-audio" loop preload="auto">
+    <source src="assets/background-music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <div class="music-floating-widget" id="music-widget">
+    <button type="button" id="music-toggle-btn" class="music-btn is-paused" aria-label="Nyalakan musik latar"
+      title="Nyalakan Musik Latar">
+      <div class="music-equalizer" aria-hidden="true">
+        <span class="bar bar-1"></span>
+        <span class="bar bar-2"></span>
+        <span class="bar bar-3"></span>
+        <span class="bar bar-4"></span>
+      </div>
+      <svg class="music-note-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M9 18V5l12-2v13"></path>
+        <circle cx="6" cy="18" r="3"></circle>
+        <circle cx="18" cy="16" r="3"></circle>
+      </svg>
+      <span class="music-label">Musik</span>
+      <span class="music-status" id="music-status-text">Mati</span>
+    </button>
+  </div>
+
   <script src="script.js"></script>
 </body>
+
 </html>
