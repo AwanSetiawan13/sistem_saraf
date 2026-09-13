@@ -574,6 +574,9 @@
   // ========================================================
   const allVideos = qsa('video');
   allVideos.forEach((video) => {
+    // Kecualikan pemutar video di dalam modal popup
+    if (video.closest('#video-modal')) return;
+
     // Ensure controls are removed initially so native black overlay is hidden
     video.removeAttribute('controls');
 
@@ -638,5 +641,112 @@
       stopPlaying();
     });
   });
+
+  // ========================================================
+  // Photo Video Popup Modal Handler (Tombol Tanda Seru)
+  // ========================================================
+  const videoModal = qs('#video-modal');
+  const modalBackdrop = qs('#video-modal-backdrop');
+  const modalCloseBtn = qs('#video-modal-close');
+  const modalPlayer = qs('#video-modal-player');
+  const modalSource = qs('#video-modal-source');
+  const modalTitle = qs('#video-modal-title');
+  const photoVideoBtns = qsa('.photo-video-btn');
+
+  let wasAudioPlayingBeforeModal = false;
+
+  const openVideoModal = (src, title) => {
+    if (!videoModal || !modalPlayer) return;
+
+    if (modalTitle) {
+      modalTitle.textContent = title || 'Video Edukasi Sistem Saraf';
+    }
+
+    if (modalSource) {
+      modalSource.src = src;
+    }
+    modalPlayer.src = src;
+    modalPlayer.load();
+
+    // Pause musik latar sementara jika sedang menyala
+    if (bgAudio && !bgAudio.paused) {
+      wasAudioPlayingBeforeModal = true;
+      pauseAudio();
+    } else {
+      wasAudioPlayingBeforeModal = false;
+    }
+
+    videoModal.classList.add('is-open');
+    videoModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+
+    // Mulai pemutaran video otomatis
+    const playPromise = modalPlayer.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Autoplay browser policy fallback
+      });
+    }
+
+    if (modalCloseBtn) {
+      modalCloseBtn.focus();
+    }
+  };
+
+  const closeVideoModal = () => {
+    if (!videoModal || !modalPlayer) return;
+
+    videoModal.classList.remove('is-open');
+    videoModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+
+    // Hentikan dan reset video pemutar modal
+    modalPlayer.pause();
+    modalPlayer.currentTime = 0;
+    if (modalSource) {
+      modalSource.removeAttribute('src');
+    }
+    modalPlayer.removeAttribute('src');
+    modalPlayer.load();
+
+    // Lanjutkan kembali musik latar jika sebelumnya menyala
+    if (wasAudioPlayingBeforeModal && bgAudio) {
+      playAudio();
+      wasAudioPlayingBeforeModal = false;
+    }
+  };
+
+  if (photoVideoBtns.length > 0 && videoModal) {
+    photoVideoBtns.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const videoSrc = btn.getAttribute('data-video-src');
+        const videoTitle = btn.getAttribute('data-video-title');
+        if (videoSrc) {
+          openVideoModal(videoSrc, videoTitle);
+        }
+      });
+    });
+
+    if (modalCloseBtn) {
+      modalCloseBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeVideoModal();
+      });
+    }
+
+    if (modalBackdrop) {
+      modalBackdrop.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeVideoModal();
+      });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && videoModal.classList.contains('is-open')) {
+        closeVideoModal();
+      }
+    });
+  }
 })();
 

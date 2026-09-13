@@ -906,9 +906,10 @@
               </ol>
             </div>
             <div class="reflex-image">
-              <video class="reflex-video-loop" loop muted playsinline preload="metadata">
-                <source src="assets/Video08.mp4" type="video/mp4" />
-              </video>
+              <img src="assets/reflex-spinal.png" alt="Diagram Jalur Refleks Saraf Spinal" loading="lazy" />
+              <button type="button" class="photo-video-btn" data-video-src="assets/Video08.mp4" data-video-title="Jalur Refleks Saraf Spinal" aria-label="Tonton Video Jalur Refleks Saraf Spinal" title="Tonton Video Penjelasan">
+                <span class="btn-exclamation" aria-hidden="true">!</span>
+              </button>
             </div>
           </article>
           <article class="reflex-card reveal">
@@ -929,9 +930,10 @@
               </ol>
             </div>
             <div class="reflex-image">
-              <video class="reflex-video-loop" loop muted playsinline preload="metadata">
-                <source src="assets/Video09.mp4" type="video/mp4" />
-              </video>
+              <img src="assets/reflex-cranial.png" alt="Diagram Jalur Refleks Saraf Kranial" loading="lazy" />
+              <button type="button" class="photo-video-btn" data-video-src="assets/Video09.mp4" data-video-title="Jalur Refleks Saraf Kranial" aria-label="Tonton Video Jalur Refleks Saraf Kranial" title="Tonton Video Penjelasan">
+                <span class="btn-exclamation" aria-hidden="true">!</span>
+              </button>
             </div>
           </article>
         </div>
@@ -975,10 +977,11 @@
         <div class="disorder-grid">
           <article class="disorder-card reveal" tabindex="0">
             <div class="disorder-image">
-              <video class="disorder-video-loop" loop muted playsinline preload="metadata">
-                <source src="assets/Video11.mp4" type="video/mp4" />
-              </video>
+              <img src="assets/stroke.png" alt="Ilustrasi Medis Gangguan Stroke" loading="lazy" />
               <span>01</span>
+              <button type="button" class="photo-video-btn" data-video-src="assets/Video11.mp4" data-video-title="Kelainan Stroke" aria-label="Tonton Video Stroke" title="Tonton Video Penjelasan">
+                <span class="btn-exclamation" aria-hidden="true">!</span>
+              </button>
             </div>
             <div class="disorder-body">
               <h3>Stroke</h3>
@@ -990,10 +993,11 @@
           </article>
           <article class="disorder-card reveal" tabindex="0">
             <div class="disorder-image">
-              <video class="disorder-video-loop" loop muted playsinline preload="metadata">
-                <source src="assets/Video12.mp4" type="video/mp4" />
-              </video>
+              <img src="assets/multiple-sclerosis.png" alt="Ilustrasi Multiple Sclerosis pada Selubung Mielin" loading="lazy" />
               <span>02</span>
+              <button type="button" class="photo-video-btn" data-video-src="assets/Video12.mp4" data-video-title="Multiple Sclerosis (MS)" aria-label="Tonton Video Multiple Sclerosis" title="Tonton Video Penjelasan">
+                <span class="btn-exclamation" aria-hidden="true">!</span>
+              </button>
             </div>
             <div class="disorder-body">
               <h3>Multiple Sclerosis (MS)</h3>
@@ -1005,10 +1009,11 @@
           </article>
           <article class="disorder-card reveal" tabindex="0">
             <div class="disorder-image">
-              <video class="disorder-video-loop" loop muted playsinline preload="metadata">
-                <source src="assets/Video13.mp4" type="video/mp4" />
-              </video>
+              <img src="assets/bells-palsy.png" alt="Ilustrasi Gangguan Bell's Palsy" loading="lazy" />
               <span>03</span>
+              <button type="button" class="photo-video-btn" data-video-src="assets/Video13.mp4" data-video-title="Bell's Palsy" aria-label="Tonton Video Bell's Palsy" title="Tonton Video Penjelasan">
+                <span class="btn-exclamation" aria-hidden="true">!</span>
+              </button>
             </div>
             <div class="disorder-body">
               <h3>Bell's Palsy</h3>
@@ -1020,10 +1025,11 @@
           </article>
           <article class="disorder-card reveal" tabindex="0">
             <div class="disorder-image">
-              <video class="disorder-video-loop" loop muted playsinline preload="metadata">
-                <source src="assets/Video14.mp4" type="video/mp4" />
-              </video>
+              <img src="assets/parkinson.png" alt="Ilustrasi Gejala dan Mekanisme Parkinson" loading="lazy" />
               <span>04</span>
+              <button type="button" class="photo-video-btn" data-video-src="assets/Video14.mp4" data-video-title="Penyakit Parkinson" aria-label="Tonton Video Parkinson" title="Tonton Video Penjelasan">
+                <span class="btn-exclamation" aria-hidden="true">!</span>
+              </button>
             </div>
             <div class="disorder-body">
               <h3>Parkinson</h3>
@@ -1253,6 +1259,26 @@
       <span class="music-label">Musik</span>
       <span class="music-status" id="music-status-text">Mati</span>
     </button>
+  </div>
+
+  <!-- Modal Video Popup Interaktif -->
+  <div id="video-modal" class="video-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="video-modal-title">
+    <div class="video-modal-backdrop" id="video-modal-backdrop"></div>
+    <div class="video-modal-card">
+      <header class="video-modal-header">
+        <div class="video-modal-badge">
+          <span class="video-modal-icon" aria-hidden="true">!</span>
+          <h3 id="video-modal-title" class="video-modal-title">Judul Video</h3>
+        </div>
+        <button type="button" class="video-modal-close" id="video-modal-close" aria-label="Tutup video popup">&times;</button>
+      </header>
+      <div class="video-modal-media">
+        <video id="video-modal-player" controls playsinline preload="auto">
+          <source id="video-modal-source" src="" type="video/mp4" />
+          Browser Anda tidak mendukung pemutar video HTML5.
+        </video>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>
