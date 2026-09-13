@@ -2838,7 +2838,7 @@ video::-webkit-media-controls-enclosure {
 .reflex-card {
   display: grid;
   grid-template-columns: 1fr .9fr;
-  align-items: center;
+  align-items: start;
   gap: 16px;
   padding: 26px;
   border: 1px solid rgba(37, 83, 48, .11);
